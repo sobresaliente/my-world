@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const ToggleTheme = () => {
     const [theme, setTheme] = useState(() => {
@@ -18,7 +18,29 @@ export const ToggleTheme = () => {
         return 'light';
     });
 
+    const toggleTheme = () => {
+        console.log('clicked');
+        
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+
+        
+        localStorage.setItem('theme', newTheme);
+        setTheme(newTheme);
+    }
+
+    useEffect(() => {
+        const root = document.documentElement;
+        if (theme === 'light') {
+            root.classList.remove('dark');
+        } else {
+            root.classList.add('dark');
+        }
+    }, [theme]);
 
 
-    return <button type="button">Toggle</button>
+
+
+
+
+    return <button type="button" onClick={toggleTheme}>{theme === 'light' ? 'Turn off the light' : 'Turn on the light' }</button>
 }
