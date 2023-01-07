@@ -1,15 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "About me";
+
 ---
 
-<Layout title="Saliente">
-	<main>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <h1>About me</h1>
-     <p>Web developer programmer</p>   
+
+
+
+<Layout title={pageTitle}>
+
+    <main class="pt-24">
+        
+        <section>
+            <h1 class="text-2xl text-center">Main Information</h1>
+            <ul>
+                <li>20 years old</li>
+                <li>
+                    <h3>Languages:</h3>
+                        <ul>
+                            <li>Russian: native</li>
+                            <li>English: striving for ielts 8</li>
+                            <li>Japanese: striving for JLPT N5</li>
+                        </ul>
+                </li>
+                <li>Ubud, Indonesia</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h1 class="text-2xl text-center">Persons that inspire me</h1>
+        </section>
+
+        <section>
+            <h1 class="text-2xl text-center">Devices that I use</h1>
+            <ul>
+                <li><a href="https://www.amazon.com/Apple-MacBook-2-6GHz-MLH32LL-Renewed/dp/B09M1ZNPMK/ref=sr_1_5?keywords=macbook+pro+2016&qid=1673086587&sr=8-5">Macbook pro 2016 15inch</a></li>
+                <li><a href="https://www.amazon.com/Apple-iPhone-64GB-Space-Gray/dp/B07SC58QBW/ref=sr_1_1?crid=1YQRY50STRIGH&keywords=iphone+xs&qid=1673086724&sprefix=iphone+x%2Caps%2C362&sr=8-1">Iphone XS</a></li>
+                <li><a href="https://www.amazon.com/MOTU-M4-USB-C-Audio-Interface/dp/B08129P2XY/ref=sr_1_2?crid=1GW1302HKPGTH&keywords=motu+m4&qid=1673086766&sprefix=mot%2Caps%2C596&sr=8-2">Audio interface MOTU M4</a></li>
+                <li><a href="https://www.amazon.com/AKG-Ultra-Reference-Stereo-Headphone/dp/B000EBBJ6Y/ref=sr_1_14?crid=1ICOVWOKGJDZ6&keywords=akg+headphones&qid=1673086814&sprefix=akg+%2Caps%2C377&sr=8-14">Headphones AKG K701</a></li>
+                <li><a href="https://www.amazon.com/AKG-Vocal-Condenser-Microphone-3101H00420/dp/B00M9CUJ6W/ref=sr_1_2?crid=3OLJ2J4DGP6NQ&keywords=akg+p220&qid=1673086875&sprefix=akg+p22%2Caps%2C357&sr=8-2">Microphone AKG P220</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h1 class="text-2xl text-center">Wishlist</h1>
+            <ul>
+                <li><a href="https://www.amazon.com/Akai-Keyboard-Controller-M-Audio-Software/dp/B08K4ZLW7F/ref=sr_1_6?crid=20QJFYBGCLGKA&keywords=akai%2Bmini&qid=1673086991&sprefix=akai%2Bm%2Caps%2C352&sr=8-6&th=1">Akai mini</a></li>
+                <li><a href="https://www.amazon.com/Nintendo-Switch-OLED-Model-White-Joy/dp/B098RKWHHZ/ref=sr_1_3?keywords=nintendo+switch&qid=1673087036&sprefix=ninte%2Caps%2C377&sr=8-3">Nintendo switch</a></li>
+                <li><a href="#">Apple watch(thinking about model)</a></li>
+                <li><a href="#">Macbook(thinking about model)</a></li>
+                <li><a href="https://www.amazon.com/dp/B08PZHYWJS/ref=twister_B08Q2RBN1C?_encoding=UTF8&th=1">Airpods max</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h1 class="text-2xl text-center">Spotify</h1>
+        </section>
+
+
+        
+        <section>
+            <h1 class="text-2xl text-center">Countries where I've never been</h1>
+        </section>
     </main>
+
 </Layout>
 
 <style>
