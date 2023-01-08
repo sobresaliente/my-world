@@ -5,12 +5,12 @@ import { ToggleTheme } from "./ToggleTheme.jsx";
 ---
 
 <header class="fixed w-full backdrop-blur-md flex justify-between p-2">
-    <h1 class="text-3xl"><a href="./">Sobresaliente</a></h1>
+    <h1 class="text-3xl"><a href="./" class="hover:underline decoration-orange-500 underline-offset-4">Sobresaliente</a></h1>
     <nav class="w-full text-xl">
         <ul class="flex justify-around items-center h-full">
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/posts">Weekly digest</a></li>
-            <li><a href="/about">About me</a></li>
+            <li><a href="/projects" class="hover:underline decoration-orange-500 underline-offset-4">Projects</a></li>
+            <li><a href="/posts" class="hover:underline decoration-orange-500 underline-offset-4">Weekly digest</a></li>
+            <li><a href="/about" class="hover:underline decoration-orange-500 underline-offset-4">About me</a></li>
         </ul>
     </nav>
     <ToggleTheme  client:load/>

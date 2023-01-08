@@ -19,8 +19,6 @@ export const ToggleTheme = () => {
     });
 
     const toggleTheme = () => {
-        console.log('clicked');
-        
         const newTheme = theme === 'light' ? 'dark' : 'light';
 
         
