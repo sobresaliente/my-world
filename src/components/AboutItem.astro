@@ -1,0 +1,19 @@
+---
+export interface Props {
+	name: string;
+    picture: string;
+    link: string;
+    description: string;
+}
+
+const { name, picture, link, description } = Astro.props
+---
+<section class="mb-16">
+    <h1 class="text-2xl text-center m-8">{name}</h1>
+    <a href={link}>
+        <img src={picture} />
+    </a>
+    <p>{description}</p>
+</section>
+
+
