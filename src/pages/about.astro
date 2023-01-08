@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+
+
+import UnderDevelopment from '../components/UnderDevelopment.astro';
+import AboutBlock from '../layouts/AboutBlock.astro';
+import AboutGrid from '../layouts/AboutGrid.astro';
+import AboutItem from '../components/AboutItem.astro';
+
 
 const pageTitle = "About me";
 
@@ -14,30 +18,46 @@ const pageTitle = "About me";
 <Layout title={pageTitle}>
 
     <main class="pt-24">
+
+        <AboutBlock title="Main Information">
+            <div class="flex w-10/12 mx-auto">
+                <div>
+                <p class="w-11/12">Hi there! My name is Daniil Toint. 
+                I'm a junior fullstack developer interested in JS stack, indie hacking and FOSS. In my free time I'm building my side projects,
+                you can find them on the <a href="../projects" class="text-orange-500">projects page</a>. 
+                Someday I will learn Rust, Go and C# for indie game development. But not today. Also I'm making music, you can check it out <a href="#" class="text-orange-500">here</a>.</p>
+                <div class="flex mt-2 w-3/12 justify-between">
+                    <a href="https://github.com/sobresaliente" class="bg-black text-white rounded-md p-1">Github</a>
+                    <a href="https://twitter.com/tointdaniil" class="bg-black text-white rounded-md p-1">Twitter</a>
+                    <a href="https://www.linkedin.com/in/daniin-toint/" class="bg-black text-white rounded-md p-1">LinkedIn</a>
+                </div>
+                <h2 class="mt-8">Stats:</h2>
+                <ul class="pl-8">
+                        <li>20 years old</li>
+                        <li>Ubud, Indonesia</li>
+                        <li>
+                            <h3>Languages:</h3>
+                            <ul class="pl-8">
+                                <li>Russian: native</li>
+                                <li>English: striving for ielts 8 <span class="text-gray-500 opacity-40">〜C2</span></li>
+                                <li>Japanese: striving for JLPT N5 <span class="text-gray-500 opacity-40">〜A2</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <img src="../../public/ya.jpg" alt="mine photo" class="h-96 border-slate-50 border-2">
+            </div>
+        </AboutBlock>
         
-        <section>
-            <h1 class="text-2xl text-center">Main Information</h1>
-            <ul>
-                <li>20 years old</li>
-                <li>
-                    <h3>Languages:</h3>
-                        <ul>
-                            <li>Russian: native</li>
-                            <li>English: striving for ielts 8</li>
-                            <li>Japanese: striving for JLPT N5</li>
-                        </ul>
-                </li>
-                <li>Ubud, Indonesia</li>
-            </ul>
-        </section>
+        <AboutBlock title="Persons that inspire me">
+            <AboutGrid>
+                <AboutItem name="Osamu Dazai" link="../../public/ya.jpg" description="Genius. I've read his poem 'No longer human' almost 100 times :)" picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.QA7zE23cG3Tlv_SzrL_IXQHaNW%26pid%3DApi&f=1&ipt=adb81cca25e17f61691b21d9c865160f743d3c54f3f3777f665a94cb38532af6&ipo=images"  />
+                <AboutItem name="Igor Kapkov" link="s" description="The best elder brother ever" picture="../../public/igor.jpg"  /> 
+            </AboutGrid>
+        </AboutBlock>
 
-
-        <section>
-            <h1 class="text-2xl text-center">Persons that inspire me</h1>
-        </section>
-
-        <section>
-            <h1 class="text-2xl text-center">Devices that I use</h1>
+        <AboutBlock title="Devices that I use">
             <ul>
                 <li><a href="https://www.amazon.com/Apple-MacBook-2-6GHz-MLH32LL-Renewed/dp/B09M1ZNPMK/ref=sr_1_5?keywords=macbook+pro+2016&qid=1673086587&sr=8-5">Macbook pro 2016 15inch</a></li>
                 <li><a href="https://www.amazon.com/Apple-iPhone-64GB-Space-Gray/dp/B07SC58QBW/ref=sr_1_1?crid=1YQRY50STRIGH&keywords=iphone+xs&qid=1673086724&sprefix=iphone+x%2Caps%2C362&sr=8-1">Iphone XS</a></li>
@@ -45,10 +65,9 @@ const pageTitle = "About me";
                 <li><a href="https://www.amazon.com/AKG-Ultra-Reference-Stereo-Headphone/dp/B000EBBJ6Y/ref=sr_1_14?crid=1ICOVWOKGJDZ6&keywords=akg+headphones&qid=1673086814&sprefix=akg+%2Caps%2C377&sr=8-14">Headphones AKG K701</a></li>
                 <li><a href="https://www.amazon.com/AKG-Vocal-Condenser-Microphone-3101H00420/dp/B00M9CUJ6W/ref=sr_1_2?crid=3OLJ2J4DGP6NQ&keywords=akg+p220&qid=1673086875&sprefix=akg+p22%2Caps%2C357&sr=8-2">Microphone AKG P220</a></li>
             </ul>
-        </section>
+        </AboutBlock>
 
-        <section>
-            <h1 class="text-2xl text-center">Wishlist</h1>
+        <AboutBlock title="Wishlist">
             <ul>
                 <li><a href="https://www.amazon.com/Akai-Keyboard-Controller-M-Audio-Software/dp/B08K4ZLW7F/ref=sr_1_6?crid=20QJFYBGCLGKA&keywords=akai%2Bmini&qid=1673086991&sprefix=akai%2Bm%2Caps%2C352&sr=8-6&th=1">Akai mini</a></li>
                 <li><a href="https://www.amazon.com/Nintendo-Switch-OLED-Model-White-Joy/dp/B098RKWHHZ/ref=sr_1_3?keywords=nintendo+switch&qid=1673087036&sprefix=ninte%2Caps%2C377&sr=8-3">Nintendo switch</a></li>
@@ -56,17 +75,17 @@ const pageTitle = "About me";
                 <li><a href="#">Macbook(thinking about model)</a></li>
                 <li><a href="https://www.amazon.com/dp/B08PZHYWJS/ref=twister_B08Q2RBN1C?_encoding=UTF8&th=1">Airpods max</a></li>
             </ul>
-        </section>
+        </AboutBlock>
 
-        <section>
-            <h1 class="text-2xl text-center">Spotify</h1>
-        </section>
+        <AboutBlock title="Spotify">
+            <UnderDevelopment />
+        </AboutBlock>
 
 
         
-        <section>
-            <h1 class="text-2xl text-center">Countries where I've never been</h1>
-        </section>
+        <AboutBlock title="Countries where I've never been">
+            <UnderDevelopment />
+        </AboutBlock>
     </main>
 
 </Layout>
