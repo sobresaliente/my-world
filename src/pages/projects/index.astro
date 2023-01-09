@@ -1,13 +1,26 @@
 ---
-import ProjectCard from "../../components/ProjectCard.astro";
 import Layout from "../../layouts/Layout.astro"
+import ProjectCard from '../../components/ProjectCard'
+import ProjectsBlock from "../../layouts/ProjectsBlock.astro";
 ---
 
 
-<Layout title="projects">
+<Layout title="projects" active="projects">
     <main class="pt-24">
+    <ProjectsBlock title="Indie hacking">
         <ul>
-            <li><ProjectCard title="Visible Light" link="https://twitter.com/visiblelightio" image="" description="Service for easiest testing" /></li>
+            <li><ProjectCard title="Visible Light" description="Inspired by scientist solution for integrating new features and collect statistics about releases." link="https://twitter.com/visiblelightio?s=21&t=Za8fXh4xAiV7AIzAk4aApQ" image="/visibleLightLogo.png" rmm=1 status="Active"/></li>
         </ul>
+    </ProjectsBlock>
+    <ProjectsBlock title="Pet projects">
+        <ul>
+            <li><ProjectCard title="This blog" description="Built with Astro personal blog with my weekly digests about my development way." link="https://github.com/sobresaliente/my-world" image="/favicon.svg" rmm=0 status="Active"/></li>
+        </ul>
+    </ProjectsBlock>
+    <ProjectsBlock title="Open source">
+        <ul>
+            <li><ProjectCard title="How Programming Works" description="The biggest russian language JS community created by ukrainian programmer. I've fixed typos in exercises. Changed outdated READMEs." link="https://github.com/HowProgrammingWorks" image="https://avatars.githubusercontent.com/u/17366055?s=200&v=4" rmm=0 status="Active"/></li>
+        </ul>
+    </ProjectsBlock>
     </main>
 </Layout>
