@@ -37,7 +37,7 @@ const { title, active } = Astro.props
 	    </script>
     </head>
 	<body class="bg-zinc-50 text-gray-700 dark:bg-zinc-900 dark:text-slate-50">
-    <Header active={active} />
+    <Header active={active} client:load/>
 
 	<slot />
 
