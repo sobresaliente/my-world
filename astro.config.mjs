@@ -9,7 +9,21 @@ import image from "@astrojs/image";
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
 
+import addClasses from 'rehype-add-classes';
+
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), image(), tailwind()]
+  integrations: [react(), image(), tailwind()],
+  markdown: {
+      extendDefaultPlugins: true,
+      rehypePlugins: [
+          [
+              addClasses,
+              {
+                  h1: 'text-4xl text-red-600 text-rowdies'
+              }
+          ]
+      ]
+  }
 });
