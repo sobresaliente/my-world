@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
+import { BsMoonFill, BsSunFill } from "react-icons/bs";
+
+const themes = ['light', 'dark']
 
 export const ToggleTheme = () => {
+    const [isMounted, setIsMounted] = useState(false)
+
     const [theme, setTheme] = useState(() => {
 
         if (import.meta.env.SSR) {
@@ -35,10 +40,21 @@ export const ToggleTheme = () => {
         }
     }, [theme]);
 
+    useEffect(() => {
+        setIsMounted(true)
+      }, []);
 
 
 
 
 
-    return <button type="button" onClick={toggleTheme}>{theme === 'light' ? 'Turn off the light' : 'Turn on the light' }</button>
+    return (isMounted ? <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600 w-16">{themes.map((t,) => {
+        const checked = t === theme;
+        return <button key={t} className={(checked ? 'bg-white text-black' : ' text-black') + ' cursor-pointer rounded-3xl p-2'} onClick={toggleTheme}>{t === 'light' ? <BsSunFill /> : <BsMoonFill />}</button>
+    })} 
+    </div>
+    :  <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16">
+        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{<BsSunFill /> }</button>
+        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{<BsMoonFill /> }</button>
+    </div>) 
 }
