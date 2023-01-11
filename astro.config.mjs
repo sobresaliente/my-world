@@ -21,7 +21,7 @@ export default defineConfig({
           [
               addClasses,
               {
-                  h1: 'text-4xl text-red-600 text-rowdies'
+                  h1: 'text-4xl text-red-600 font-rowdies'
               }
           ]
       ]
