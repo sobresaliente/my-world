@@ -14,7 +14,7 @@ import addClasses from 'rehype-add-classes';
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
-import vercel from '@astrojs/vercel/static';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
