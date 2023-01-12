@@ -14,7 +14,7 @@ import addClasses from 'rehype-add-classes';
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
-import netlify from "@astrojs/netlify/functions";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,5 +26,5 @@ export default defineConfig({
     }]]
   },
   output: "server",
-  adapter: netlify()
+  adapter: vercel()
 });
