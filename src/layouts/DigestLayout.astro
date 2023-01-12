@@ -1,14 +1,17 @@
 ---
+    import Layout from "./Layout.astro";
+
     const { frontmatter } = Astro.props;
 ---
 
-<html class="bg-red-600">
 <!-- ... -->
-<h1>{frontmatter.title}</h1>
-<h2>Post author: {frontmatter.author}</h2>
-<p>{frontmatter.description}
-<p>
-    <slot />
-</p>
-
-</html>
+<Layout title={frontmatter.title}>
+    <main class="pt-24 mx-auto w-1/2">
+        <h1>{frontmatter.title}</h1>
+        <h2>Post author: {frontmatter.author}</h2>
+        <p>{frontmatter.description}
+        <p>
+            <slot />
+        </p>
+    </main>
+</Layout>
