@@ -14,7 +14,7 @@ import addClasses from 'rehype-add-classes';
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
-import vercel from "@astrojs/vercel/serverless";
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,6 +25,6 @@ export default defineConfig({
       h1: 'text-4xl text-red-600 font-rowdies'
     }]]
   },
-  output: "server",
+  output: "serverless",
   adapter: vercel()
 });
