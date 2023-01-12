@@ -3,7 +3,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header"
 export interface Props {
 	title: string;
-    active: string;
+    active?: string;
 }
 
 const { title, active } = Astro.props
@@ -36,7 +36,7 @@ const { title, active } = Astro.props
        
 	    </script>
     </head>
-	<body class="bg-zinc-50 text-gray-700 dark:bg-zinc-900 dark:text-slate-50 break-words transition-colors duration-500">
+	<body class="bg-slate-50 text-zinc-900 dark:bg-zinc-900 dark:text-slate-50 break-words transition-colors duration-500">
     <Header active={active} client:load/>
 
 	<slot />
