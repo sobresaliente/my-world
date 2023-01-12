@@ -14,6 +14,9 @@ import addClasses from 'rehype-add-classes';
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
+import netlify from "@astrojs/netlify/functions";
+
+// https://astro.build/config
 export default defineConfig({
   integrations: [react(), image(), tailwind(), mdx()],
   markdown: {
@@ -21,5 +24,7 @@ export default defineConfig({
     rehypePlugins: [[addClasses, {
       h1: 'text-4xl text-red-600 font-rowdies'
     }]]
-  }
+  },
+  output: "server",
+  adapter: netlify()
 });
