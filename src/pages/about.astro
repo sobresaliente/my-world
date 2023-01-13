@@ -8,7 +8,8 @@
     import AboutItem from '../components/AboutItem.astro';
     import JobBlock from '../components/JobBlock';
 
-    import { BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
+
+    import { Icon } from 'astro-icon'
 
     const pageTitle = "About me";
 
@@ -29,15 +30,19 @@
                     <div class="flex mt-6 w-4/12 justify-between">
                         <a href="https://github.com/sobresaliente"
                             class="bg-zinc-700 text-white rounded-md p-2 flex items-center">
-                            <BsGithub className="mr-2" /> Github
+                            <Icon name="bi:github" className="w-4 h-4 mr-2" />
+                            Github
                         </a>
                         <a href="https://twitter.com/tointdaniil"
                             class="bg-zinc-700 text-white rounded-md p-2 flex items-center ">
-                            <BsTwitter className="mr-2" />Twitter
+                            <Icon name="bi:twitter" className="w-4 h-4 mr-2" />
+                            Twitter
                         </a>
                         <a href="https://www.linkedin.com/in/daniin-toint/"
                             class="bg-zinc-700 text-white rounded-md p-2 flex items-center">
-                            <BsLinkedin className="mr-2" />LinkedIn
+                            <Icon name="bi:linkedin" className="w-4 h-4 mr-2" />
+
+                            LinkedIn
                         </a>
                     </div>
                     <h2 class="mt-8">Stats:</h2>
