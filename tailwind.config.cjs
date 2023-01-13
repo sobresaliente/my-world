@@ -6,7 +6,8 @@ module.exports = {
 		extend: {
             fontFamily: {
                 rowdies: ['Rowdies', '-apple-system', 'cursive'],
-                classic: ['Times New Roman', 'sans-serif']
+                classic: ['Times New Roman', 'sans-serif'],
+                rubik: ['Rubik', 'sans-serif']
             }
         },
 	},

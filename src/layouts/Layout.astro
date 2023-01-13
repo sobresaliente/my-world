@@ -10,7 +10,7 @@ const { title, active } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-slate-50 text-zinc-900 dark:bg-zinc-900 dark:text-slate-50 break-words transition-colors duration-500">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -47,10 +47,12 @@ const { title, active } = Astro.props
 </html>
 <style is:global>
     @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap');
     body {
         font-family: 'Rowdies', -apple-system, cursive;
         font-weight: 400;
         text-rendering: optimizeLegibility;
         overflow-wrap: break-word;
+        min-height: 100vh;
     }
 </style>
