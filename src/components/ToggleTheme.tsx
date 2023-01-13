@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {Home} from '@icon-park/react';
+import { Sun, Moon } from '@icon-park/react';
 
 
 
@@ -50,13 +50,13 @@ export const ToggleTheme = () => {
 
 
 
-    return (isMounted ? <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600 w-16">{themes.map((t,) => {
+    return (isMounted ? <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600 w-16 opacity-40">{themes.map((t,) => {
         const checked = t === theme;
-        return <button key={t} className={(checked ? 'bg-white text-black' : ' text-black') + ' cursor-pointer rounded-3xl p-2'} onClick={toggleTheme}>{t === 'light' ? <Home /> : <Home />}</button>
+        return <button key={t} className={(checked ? 'bg-white text-black' : ' text-black') + ' cursor-pointer rounded-3xl p-2'} onClick={toggleTheme}>{t === 'light' ? <Sun /> : <Moon />}</button>
     })} 
     </div>
-    :  <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16">
-<Home />
-<Home />
+    :  <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16 opacity-0 ">
+        <button className='bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16 cursor-pointer rounded-3xl p-2 opacity-0' ><Sun /></button>
+        <button  className='bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16 cursor-pointer rounded-3xl p-2 opacity-0' ><Moon /></button>
     </div>) 
 } 
