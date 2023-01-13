@@ -17,6 +17,7 @@ const { title, active } = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+       
         <script is:inline>    
         const theme = (() => {
             if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {

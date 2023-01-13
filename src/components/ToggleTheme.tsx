@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import {Home} from '@icon-park/react';
+
 
 
 const themes = ['light', 'dark']
@@ -50,11 +52,11 @@ export const ToggleTheme = () => {
 
     return (isMounted ? <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600 w-16">{themes.map((t,) => {
         const checked = t === theme;
-        return <button key={t} className={(checked ? 'bg-white text-black' : ' text-black') + ' cursor-pointer rounded-3xl p-2'} onClick={toggleTheme}>{t === 'light' ? <BsSunFill /> : <BsMoonFill />}</button>
+        return <button key={t} className={(checked ? 'bg-white text-black' : ' text-black') + ' cursor-pointer rounded-3xl p-2'} onClick={toggleTheme}>{t === 'light' ? <Home /> : <Home />}</button>
     })} 
     </div>
     :  <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16">
-        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{ }</button>
-        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{}</button>
+<Home />
+<Home />
     </div>) 
-}
+} 
