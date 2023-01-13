@@ -54,7 +54,7 @@ export const ToggleTheme = () => {
     })} 
     </div>
     :  <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16">
-        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{<BsSunFill /> }</button>
-        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{<BsMoonFill /> }</button>
+        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{ }</button>
+        <button className='cursor-pointer rounded-3xl p-2' onClick={toggleTheme}>{}</button>
     </div>) 
 }
