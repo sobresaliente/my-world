@@ -6,16 +6,16 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({active}) => {
-    return (<header className="fixed w-full backdrop-blur-md flex justify-between p-2 z-20 ">
+    return (<header className="fixed w-full backdrop-blur-md flex flex-col sm:flex-row justify-between p-2 z-20 ">
     <h1 className="text-3xl tracking-tighter"><a href="/" className={(active === 'logo' ? 'text-orange-500 ' : '') +'hover:underline decoration-orange-500 underline-offset-4'}>Sobresaliente</a></h1>
     <nav className="w-full text-xl">
 
-        <ul className="flex justify-around items-center h-full">
+        <ul className="flex justify-around items-center h-full mt-4 sm:mt-0">
             <li><a href="/projects" className={(active === 'projects' ? 'text-orange-500 ' : '') + 'hover:underline decoration-orange-500 underline-offset-4'}>Projects</a></li>
             <li><a href="/posts" className={(active === 'posts' ? 'text-orange-500 ' : '') + "hover:underline decoration-orange-500 underline-offset-4"}>Weekly digest</a></li>
             <li><a href="/about" className={(active === 'about' ? 'text-orange-500 ' : '') + "hover:underline decoration-orange-500 underline-offset-4"}>About me</a></li>
         </ul>
-    </nav>
+    </nav> 
     <ToggleTheme />
 </header>)
 }
