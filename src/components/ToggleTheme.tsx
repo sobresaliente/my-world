@@ -50,7 +50,7 @@ export const ToggleTheme = () => {
 
 
 
-    return (isMounted ? <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600 w-16 opacity-40">{themes.map((t,) => {
+    return (isMounted ? <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600 w-16 opacity-40 mt-2 sm:mt-0">{themes.map((t,) => {
         const checked = t === theme;
         return <button key={t} className={(checked ? 'bg-white text-black' : ' text-black') + ' cursor-pointer rounded-3xl p-2'} onClick={toggleTheme}>{t === 'light' ? <Sun /> : <Moon />}</button>
     })} 

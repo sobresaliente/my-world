@@ -17,7 +17,7 @@ const JobBlock: React.FC<Props> = ({title, position, picture, dates, duration, l
         <span className="text-center text-gray-500 dark:text-gray-300 text-transition duration-500">{position}</span>
         <span className="text-center">{dates}</span>
         <span className="text-center mb-4">{duration}</span>
-        <p className="w-10/12 mx-auto">{description}</p>
+        <p className="w-10/12 mx-auto text-center sm:text-left">{description}</p>
     </section>)
 }
 

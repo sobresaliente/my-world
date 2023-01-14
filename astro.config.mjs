@@ -21,9 +21,6 @@ export default defineConfig({
   integrations: [react(), image(), tailwind(), mdx()],
   markdown: {
     extendDefaultPlugins: true,
-    rehypePlugins: [[addClasses, {
-      h1: 'text-4xl text-red-600 font-rowdies'
-    }]]
   },
   output: "server",
   adapter: vercel()

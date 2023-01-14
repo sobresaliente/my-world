@@ -19,15 +19,18 @@
 
     <main class="pt-24">
         <AboutBlock title="Main Information">
-            <div class="flex w-10/12 mx-auto">
-                <div>
+            <div class="flex w-10/12 mx-auto flex-col sm:flex-row">
+                <div class="text-center sm:text-left">
                     <p class="w-11/12">Hi there! My name is Daniil Toint.
-                        I'm a junior fullstack developer interested in JS stack, indie hacking and FOSS. In my free time
+                        I'm a middle fullstack developer interested in JS stack, indie hacking and FOSS. In my free time
                         I'm building my side projects,
-                        you can find them on the <a href="../projects" class="text-orange-500">projects page</a>.
+                        you can find them on the <a href="../projects" class="text-orange-500">projects page</a>. My
+                        current goal is to learn T3 stack inspired by Theo Browne and start building indie hacking
+                        projects with it. Also I want to learn WebGL/Three.js.
                         Someday I will learn Rust, Go and C# for indie game development. But not today. Also I'm making
-                        music, you can check it out <a href="#" class="text-orange-500">here</a>.</p>
-                    <div class="flex mt-6 w-4/12 justify-between">
+                        music, you can check it out <a href="https://soundcloud.com/xnxlf"
+                            class="text-orange-500">here</a>.</p>
+                    <div class="flex mt-6  w-full sm:w-4/12 justify-between">
                         <a href="https://github.com/sobresaliente"
                             class="bg-zinc-700 text-white rounded-md p-2 flex items-center">
                             <Icon name="bi:github" className="w-4 h-4 mr-2" />
@@ -45,8 +48,8 @@
                             LinkedIn
                         </a>
                     </div>
-                    <h2 class="mt-8">Stats:</h2>
-                    <ul class="pl-8">
+                    <h2 class="mt-8 text-left">Stats:</h2>
+                    <ul class="pl-8 text-sm sm:text-md text-left">
                         <li>20 years old</li>
                         <li>Ubud, Indonesia</li>
                         <li>
@@ -61,7 +64,8 @@
                     </ul>
                 </div>
 
-                <img src="/ya.jpg" alt="mine photo" class="h-96 border-orange-500 border-2">
+                <img src="/ya.jpg" alt="mine photo"
+                    class="h-96 border-orange-500 border-2 order-first sm:order-last mb-4 sm:mb-0">
             </div>
         </AboutBlock>
 
@@ -69,10 +73,10 @@
             <JobBlock title="Universal Terminal System" dates="December 2022 - January 2023" duration="2 months"
                 position="Middle FullStack Developer // Teamlead"
                 link="https://www.linkedin.com/company/universal-terminal-system/mycompany/verification/"
-                description="I've decided to change my stack to something more popular and interesting for me(React + Next.js). So I've landed the middle position at the big product company with small web-dev department. That's why I quckly became teamlead. I love that job a lot because I have a lot of technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So I can work with technologies and immediately use them for my indie hacking passion :)"
+                description="I've decided to change my stack to something more popular and interesting for me(React + Next.js). So I've landed the middle position at the big product company with small web-dev department. That's why I quckly became teamlead. I love that job a lot because I have a lot of technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So I can work with technologies and immediately use them for my indie hacking passion. My team is developing a lot of MVP's connected to hardware systems via bluetooth. We're using Next.js on the frontend, mongoDB and NestJs on the backend, ionic on the mobile and Electron/Nextron for desktop applications."
                 picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-exp1.licdn.com%2Fdms%2Fimage%2FC4D0BAQFFoxb8vz9D-A%2Fcompany-logo_200_200%2F0%2F1613020114591%3Fe%3D2147483647%26v%3Dbeta%26t%3D9CtWgZ5AffrMUIyThjZqjx7wQ8r69FrLT2ruRnAfbiw&f=1&nofb=1&ipt=e4edd7eee0f5c77b1b2e6805aa2272323eb288b4267c5950e98974aab0e6c628&ipo=images" />
             <JobBlock title="Roonyx" position="Junior Frontend Developer" link="https://www.linkedin.com/company/roonyx"
-                description="This is my first web-dev position. Junior Angular developer and simple tasks with Nest.js. On that position I've played a lot with typescript helper functions and reflect API. I've developed large CRM with more than 200 Angular modules. "
+                description="This is my first web-dev position. I've developed very large CRM system using Angular. On that position I've played a lot with typescript helper functions and reflect API. For example I've written js class with property decorator for aliases.  "
                 dates="February 2022 - December 2022" duration="10 months"
                 picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fcb%2Fa0%2F8e%2Fcba08e5238c05a6765a707e6a6b4f40d.jpg&f=1&nofb=1&ipt=f6e00cbfa8dbacf231ebfb19d7045c372d8ac13fad8e5e6dd34fb3fa5ca52d9b&ipo=images" />
 

@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:mdx": "eslint . --ext js,md,mdx"
   },
   "dependencies": {
     "@astrojs/image": "^0.12.1",
@@ -32,6 +33,7 @@
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",
     "eslint-plugin-astro": "^0.21.1",
+    "eslint-plugin-mdx": "^2.0.5",
     "prettier": "^2.8.2",
     "prettier-plugin-astro": "^0.7.2"
   }
