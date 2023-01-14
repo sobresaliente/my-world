@@ -19,8 +19,8 @@
 
     <main class="pt-24">
         <AboutBlock title="Main Information">
-            <div class="flex w-10/12 mx-auto">
-                <div>
+            <div class="flex w-10/12 mx-auto flex-col sm:flex-row">
+                <div class="text-center sm:text-left">
                     <p class="w-11/12">Hi there! My name is Daniil Toint.
                         I'm a middle fullstack developer interested in JS stack, indie hacking and FOSS. In my free time
                         I'm building my side projects,
@@ -30,7 +30,7 @@
                         Someday I will learn Rust, Go and C# for indie game development. But not today. Also I'm making
                         music, you can check it out <a href="https://soundcloud.com/xnxlf"
                             class="text-orange-500">here</a>.</p>
-                    <div class="flex mt-6 w-4/12 justify-between">
+                    <div class="flex mt-6  w-full sm:w-4/12 justify-between">
                         <a href="https://github.com/sobresaliente"
                             class="bg-zinc-700 text-white rounded-md p-2 flex items-center">
                             <Icon name="bi:github" className="w-4 h-4 mr-2" />
@@ -48,8 +48,8 @@
                             LinkedIn
                         </a>
                     </div>
-                    <h2 class="mt-8">Stats:</h2>
-                    <ul class="pl-8">
+                    <h2 class="mt-8 text-left">Stats:</h2>
+                    <ul class="pl-8 text-sm sm:text-md text-left">
                         <li>20 years old</li>
                         <li>Ubud, Indonesia</li>
                         <li>
@@ -64,7 +64,8 @@
                     </ul>
                 </div>
 
-                <img src="/ya.jpg" alt="mine photo" class="h-96 border-orange-500 border-2">
+                <img src="/ya.jpg" alt="mine photo"
+                    class="h-96 border-orange-500 border-2 order-first sm:order-last mb-4 sm:mb-0">
             </div>
         </AboutBlock>
 
