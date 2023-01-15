@@ -6,7 +6,7 @@
     import AboutBlock from '../layouts/AboutBlock.astro';
     import AboutGrid from '../layouts/AboutGrid.astro';
     import AboutItem from '../components/AboutItem.astro';
-    import JobBlock from '../components/JobBlock';
+    import JobBlock from '../layouts/JobBlock.astro';
 
 
     import { Icon } from 'astro-icon'
@@ -64,7 +64,7 @@
                     </ul>
                 </div>
 
-                <img src="/ya.jpg" alt="mine photo"
+                <img src="/about/people/ya.jpg" alt="mine photo"
                     class="h-96 border-orange-500 border-2 order-first sm:order-last mb-4 sm:mb-0">
             </div>
         </AboutBlock>
@@ -73,27 +73,38 @@
             <JobBlock title="Universal Terminal System" dates="December 2022 - January 2023" duration="2 months"
                 position="Middle FullStack Developer // Teamlead"
                 link="https://www.linkedin.com/company/universal-terminal-system/mycompany/verification/"
-                description="I've decided to change my stack to something more popular and interesting for me(React + Next.js). So I've landed the middle position at the big product company with small web-dev department. That's why I quckly became teamlead. I love that job a lot because I have a lot of technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So I can work with technologies and immediately use them for my indie hacking passion. My team is developing a lot of MVP's connected to hardware systems via bluetooth. We're using Next.js on the frontend, mongoDB and NestJs on the backend, ionic on the mobile and Electron/Nextron for desktop applications."
-                picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-exp1.licdn.com%2Fdms%2Fimage%2FC4D0BAQFFoxb8vz9D-A%2Fcompany-logo_200_200%2F0%2F1613020114591%3Fe%3D2147483647%26v%3Dbeta%26t%3D9CtWgZ5AffrMUIyThjZqjx7wQ8r69FrLT2ruRnAfbiw&f=1&nofb=1&ipt=e4edd7eee0f5c77b1b2e6805aa2272323eb288b4267c5950e98974aab0e6c628&ipo=images" />
+                picture="/about/jobs/uts.jpg">
+                <p class="w-10/12 mx-auto text-center sm:text-left">I've decided to change my stack to something more
+                    popular and interesting for me(React +
+                    Next.js). So I've landed the middle position at the big product company with small web-dev
+                    department. That's why I quckly became teamlead. I love that job a lot because I have a lot of
+                    technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So I can work with
+                    technologies and immediately use them for my indie hacking passion. My team is developing a lot of
+                    MVP's connected to hardware systems via bluetooth. We're using Next.js on the frontend, mongoDB and
+                    NestJs on the backend, ionic on the mobile and Electron/Nextron for desktop applications.</p>
+            </JobBlock>
+
             <JobBlock title="Roonyx" position="Junior Frontend Developer" link="https://www.linkedin.com/company/roonyx"
-                description="This is my first web-dev position. I've developed very large CRM system using Angular. On that position I've played a lot with typescript helper functions and reflect API. For example I've written js class with property decorator for aliases.  "
-                dates="February 2022 - December 2022" duration="10 months"
-                picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fcb%2Fa0%2F8e%2Fcba08e5238c05a6765a707e6a6b4f40d.jpg&f=1&nofb=1&ipt=f6e00cbfa8dbacf231ebfb19d7045c372d8ac13fad8e5e6dd34fb3fa5ca52d9b&ipo=images" />
+                dates="February 2022 - December 2022" duration="10 months" picture="/about/jobs/roonyx.jpg">
+                <p class="w-10/12 mx-auto text-center sm:text-left">
+                    This is my first web-dev position. I've developed very large CRM system using Angular. On
+                    that position I've played a lot with typescript helper functions and reflect API. For example I've
+                    written js class with property decorator for aliases.</p>
+            </JobBlock>
 
         </AboutBlock>
 
         <AboutBlock title="Persons that inspire me">
             <AboutGrid>
                 <AboutItem name="Igor Kapkov" link="https://igas.dev/"
-                    description="The best elder brother ever. Love ya" picture="/igor.jpg" />
+                    description="The best elder brother ever. Love ya" picture="/about/people/igor.jpg" />
                 <AboutItem name="Osamu Dazai" link="https://en.wikipedia.org/wiki/Osamu_Dazai"
                     description="Genius. I've read his poem 'No longer human' almost 100 times :)"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.QA7zE23cG3Tlv_SzrL_IXQHaNW%26pid%3DApi&f=1&ipt=adb81cca25e17f61691b21d9c865160f743d3c54f3f3777f665a94cb38532af6&ipo=images" />
+                    picture="/about/people/dazai.jpg" />
                 <AboutItem name="Theo Browne" link="https://twitter.com/t3dotgg" description="Love his vibes"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnextjs.org%2F_next%2Fimage%3Furl%3Dhttps%3A%252F%252Fwww.datocms-assets.com%252F35255%252F1664988146-headshot-main.jpeg%26w%3D640%26q%3D75&f=1&nofb=1&ipt=55e7e736ebe338650b959062414ed152dc2665787280149d7cf96ec06bb56dfc&ipo=images" />
+                    picture="/about/people/theo.jpg" />
                 <AboutItem name="Zillakami" link="https://www.youtube.com/watch?v=iaiPgyWPFTA&ab_channel=CityMorgue"
-                    description="His music gives me a lot of energy lul"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.genius.com%2F3f3e889c449890258eac09e10dc3f870.1000x1000x1.jpg&f=1&nofb=1&ipt=47f122451c4f39c0cfa9eb74e0f5fbaa0add3441a202ff3cf364256f228485ba&ipo=images" />
+                    description="His music gives me a lot of energy lul" picture="/about/people/zilla.jpg" />
             </AboutGrid>
         </AboutBlock>
 
@@ -101,19 +112,19 @@
             <AboutGrid>
                 <AboutItem name="Macbook Pro 2016 15inch" description=""
                     link="https://www.amazon.com/Apple-MacBook-2-6GHz-MLH32LL-Renewed/dp/B09M1ZNPMK/ref=sr_1_5?keywords=macbook+pro+2016&qid=1673086587&sr=8-5"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fksassets.timeincuk.net%2Fwp%2Fuploads%2Fsites%2F54%2F2017%2F05%2Fmacbook-pro-15-2-920x518.jpg&f=1&nofb=1&ipt=039d94725a5119ebe7a00d0aae25b02a1ce8abb8c737b26ac4ccb2f8cffd38da&ipo=images" />
+                    picture="/about/devices/macbook.jpg" />
                 <AboutItem name="Audio interface MOTU M4 4x4" description=""
                     link="https://www.amazon.com/MOTU-M4-USB-C-Audio-Interface/dp/B08129P2XY/ref=sr_1_2?crid=1GW1302HKPGTH&keywords=motu+m4&qid=1673086766&sprefix=mot%2Caps%2C596&sr=8-2"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmusiclandkey.fs-storage.jp%2Ffs2cabinet%2Fmot%2Fmotu-m4%2Fmotu-m4-m-01-pl.jpg&f=1&nofb=1&ipt=133e5b51086dd3ef1ec01d482a68c2138f3096594647a42c8aca5ce73519edb5&ipo=images" />
+                    picture="/about/devices/motu.jpg" />
                 <AboutItem name="Iphone XS" description=""
                     link="https://www.amazon.com/Apple-iPhone-64GB-Space-Gray/dp/B07SC58QBW/ref=sr_1_1?crid=1YQRY50STRIGH&keywords=iphone+xs&qid=1673086724&sprefix=iphone+x%2Caps%2C362&sr=8-1"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstore.storeimages.cdn-apple.com%2F4982%2Fas-images.apple.com%2Fis%2Frefurb-iphone-xs-spacegray%3Fwid%3D1144%26hei%3D1144%26fmt%3Djpeg%26qlt%3D80%26op_usm%3D0.5%2C0.5%26.v%3D1579299537066&f=1&nofb=1&ipt=22ea0415beaf2fd62cede3d9d2e2f0f193cc80c1a8db1e9465147756a2d612e2&ipo=images" />
+                    picture="/about/devices/iphone.jpg" />
                 <AboutItem name="Headphones AKG K701" description=""
                     link="https://www.amazon.com/AKG-Ultra-Reference-Stereo-Headphone/dp/B000EBBJ6Y/ref=sr_1_14?crid=1ICOVWOKGJDZ6&keywords=akg+headphones&qid=1673086814&sprefix=akg+%2Caps%2C377&sr=8-14"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fd1aeri3ty3izns.cloudfront.net%2Fmedia%2F26%2F268646%2F1200%2Fpreview.jpg&f=1&nofb=1&ipt=771d21f2ff6a83745fa127648c4b5e5ac1581abd3bf1c682d0062a1d8b781c1b&ipo=images" />
+                    picture="/about/devices/headphones.jpg" />
                 <AboutItem name="Microphone AKG P220" description=""
                     link="https://www.amazon.com/AKG-Vocal-Condenser-Microphone-3101H00420/dp/B00M9CUJ6W/ref=sr_1_2?crid=3OLJ2J4DGP6NQ&keywords=akg+p220&qid=1673086875&sprefix=akg+p22%2Caps%2C357&sr=8-2"
-                    picture="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fss-pics.s3.eu-west-1.amazonaws.com%2Ffiles%2F261448%2Fpage-12972_f_sq.jpg%3F1537948509&f=1&nofb=1&ipt=55ab20e74346c5dd4da6511f1b4211db8740318e197bc7c4049028d28efb8e13&ipo=images" />
+                    picture="/about/devices/micro.jpg" />
             </AboutGrid>
         </AboutBlock>
 
