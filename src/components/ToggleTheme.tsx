@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { Sun, Moon } from '@icon-park/react';
+import  Sun  from '@icon-park/react/lib/icons/Sun';
+import  Moon from '@icon-park/react/lib/icons/Moon';
 
 
 
