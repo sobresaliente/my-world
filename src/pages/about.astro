@@ -10,11 +10,34 @@
 
 
     import { Icon } from 'astro-icon'
-
+    import VoxelDaniel from '../components/VoxelDaniel';
     const pageTitle = "About me";
 
 ---
 
+<script>
+    import * as THREE from 'three'
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(500, 500);
+    document.getElementById('three').appendChild(renderer.domElement);
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({ color: new THREE.Color("rgb(249, 115, 22)") });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 5;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.05;
+    }
+    animate();
+</script>
 <Layout title={pageTitle} active="about">
 
     <main class="pt-24">
@@ -47,10 +70,24 @@
                             LinkedIn
                         </a>
                     </div>
+
+                </div>
+
+
+
+                <img src="/about/people/ya.jpg" alt="mine photo"
+                    class="h-96 border-orange-500 border-2 order-first sm:order-last mb-4 sm:mb-0">
+            </div>
+        </AboutBlock>
+
+        <AboutBlock title="Stats">
+            <div class="flex w-10/12 mx-auto flex-col sm:flex-row justify-between">
+                <section>
                     <h2 class="mt-8 text-left">Stats:</h2>
                     <ul class="pl-8 text-sm sm:text-md text-left">
                         <li>20 years old</li>
                         <li>Ubud, Indonesia</li>
+                        <li>11 months of WebDev experience</li>
                         <li>
                             <h3>Languages:</h3>
                             <ul class="pl-8">
@@ -61,27 +98,33 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
+                </section>
+                <div id="three" class="border-orange-500 border-2 w-[505px] mt-16"></div>
 
-                <img src="/about/people/ya.jpg" alt="mine photo"
-                    class="h-96 border-orange-500 border-2 order-first sm:order-last mb-4 sm:mb-0">
+
             </div>
+
         </AboutBlock>
+
 
         <AboutBlock title="My  jobs">
             <JobBlock title="Universal Terminal System" dates="December 2022 - January 2023" duration="2 months"
                 position="Middle FullStack Developer // Teamlead"
                 link="https://www.linkedin.com/company/universal-terminal-system/mycompany/verification/"
                 picture="/about/jobs/uts.jpg">
-                <p class="w-10/12 mx-auto text-center sm:text-left font-rubik text-lg">I've decided to change my stack
+                <p class="w-10/12 mx-auto text-center sm:text-left font-rubik text-lg">I've decided to change my
+                    stack
                     to
                     something more
                     popular and interesting for me(React +
                     Next.js). So I've landed the middle position at the big product company with small web-dev
                     department. That's why I quckly became teamlead. I love that job a lot because I have a lot of
-                    technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So I can work with
-                    technologies and immediately use them for my indie hacking passion. My team is developing a lot of
-                    MVP's connected to hardware systems via bluetooth. We're using Next.js on the frontend, mongoDB and
+                    technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So I can work
+                    with
+                    technologies and immediately use them for my indie hacking passion. My team is developing a lot
+                    of
+                    MVP's connected to hardware systems via bluetooth. We're using Next.js on the frontend, mongoDB
+                    and
                     NestJs on the backend, ionic on the mobile and Electron/Nextron for desktop applications.</p>
             </JobBlock>
 
@@ -89,7 +132,8 @@
                 dates="February 2022 - December 2022" duration="10 months" picture="/about/jobs/roonyx.jpg">
                 <p class="w-10/12 mx-auto text-center sm:text-left font-rubik text-lg">
                     This is my first web-dev position. I've developed very large CRM system using Angular. On
-                    that position I've played a lot with typescript helper functions and reflect API. For example I've
+                    that position I've played a lot with typescript helper functions and reflect API. For example
+                    I've
                     written js class with property decorator for aliases.</p>
             </JobBlock>
 
