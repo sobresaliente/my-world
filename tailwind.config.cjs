@@ -12,8 +12,10 @@ module.exports = {
             colors: {
                 'dark-primary': '#f8fafc',
                 'dark-secondary': '#0ea5e9',
-                'dark-bg-primary':'#27272a',
-                'dark-bg-secondary': '#52525b'
+                'dark-accent': '#6366f1',
+                'dark-bg-primary':'#111827',
+                'dark-bg-secondary': '#1e293b',
+                'dark-bg-accent': '#334155',
             }
         },
 	},
