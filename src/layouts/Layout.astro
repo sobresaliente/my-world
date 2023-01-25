@@ -10,7 +10,7 @@ const { title, active } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-slate-50 text-zinc-900 dark:bg-zinc-900 dark:text-slate-50 break-words transition-colors duration-500">
+<html lang="en" class="bg-slate-50 text-zinc-900 dark:bg-dark-bg-primary dark:text-slate-50 break-words transition-colors duration-500">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -37,7 +37,7 @@ const { title, active } = Astro.props
        
 	    </script>
     </head>
-	<body class="bg-slate-50 text-zinc-900 dark:bg-zinc-900 dark:text-slate-50 break-words transition-colors duration-500">
+	<body class="bg-slate-50 text-zinc-900 dark:bg-dark-bg-primary dark:text-slate-50 break-words transition-colors duration-500">
     <Header active={active} client:load/>
 
 	<slot />
