@@ -16,6 +16,10 @@
     const convertKitKey = import.meta.env.CONVERT_KIT_KEY;
     const formId = import.meta.env.CONVERT_KIT_FORM_ID;
 
+    const getCurrentTrack = () => {
+        fetch('https://api.spotify.com/v1/me/player/currently-playing', { body: { api_key: import.meta.env.SPOTIFY_KEY } })
+    }
+
 ---
 
 <script>
@@ -113,6 +117,7 @@
                         width="450" height="300" class="border-accent dark:border-dark-accent border-4 mt-8 sm:mt-0">
                 </section>
                 <Newsletter apiKey={convertKitKey} formId={formId} client:load />
+                <div></div>
                 <!-- <div id="three" class="mx-auto sm:right-32 mt-16 sm:absolute"></div> -->
 
 
@@ -126,7 +131,7 @@
                 position="Middle FullStack Developer // Teamlead"
                 link="https://www.linkedin.com/company/universal-terminal-system/mycompany/verification/"
                 picture="/about/jobs/uts.jpg">
-                <ul class=" dark:text-dark-accent w-6/12 justify-between mx-auto hidden sm:flex">
+                <ul class=" dark:text-dark-accent text-accent w-6/12 justify-between mx-auto hidden sm:flex">
                     <li>React</li>
                     <li>Next</li>
                     <li>Ionic</li>
@@ -156,7 +161,7 @@
 
             <JobBlock title="Roonyx" position="Junior Frontend Developer" link="https://www.linkedin.com/company/roonyx"
                 dates="February 2022 - December 2022" duration="10 months" picture="/about/jobs/roonyx.jpg">
-                <ul class="dark:text-dark-accent w-6/12 justify-between mx-auto hidden sm:flex">
+                <ul class="dark:text-dark-accent text-accent w-6/12 justify-between mx-auto hidden sm:flex">
                     <li>Angular</li>
                     <li>RxJS</li>
                     <li>Nest</li>

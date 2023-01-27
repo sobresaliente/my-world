@@ -12,7 +12,7 @@ module.exports = {
             colors: {
                 'dark-primary': '#f8fafc',
                 'dark-secondary': '#0ea5e9',
-                'dark-accent': '#6366f1',
+                'dark-accent': '#467ae7',
                 'dark-bg-primary':'#111827',
                 'dark-bg-secondary': '#1e293b',
                 'dark-bg-accent': '#334155',
@@ -20,7 +20,7 @@ module.exports = {
 
                 'primary': '#f8fafc',
                 'secondary': '#2dd4bf',
-                'accent': '#9333ea',
+                'accent': '#00e8d3',
                 'bg-primary':'#fff',
                 'bg-secondary': '#0d9488',
                 'bg-accent': '#0891b2',
