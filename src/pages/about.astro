@@ -87,22 +87,30 @@
 
         <AboutBlock title="Stats">
             <div class="flex w-10/12 mx-auto flex-col justify-between">
-                <section>
-                    <h2 class="mt-8 text-left text-2xl">Stats:</h2>
-                    <ul class="pl-8 text-xl sm:text-md text-left list-disc ">
-                        <li>20 years old</li>
-                        <li>Ubud, Indonesia</li>
-                        <li>11 months of WebDev experience</li>
-                        <li>
-                            <h3>Languages:</h3>
-                            <ul class="pl-8 list-disc">
-                                <li>Russian: native</li>
-                                <li>English: striving for IELTS 8 <span class="text-gray-500 opacity-40">〜C2</span></li>
-                                <li>Japanese: striving for JLPT N5 <span class="text-gray-500 opacity-40">〜A2</span>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                <section class="flex justify-between">
+
+                    <div>
+                        <h2 class="mt-8 text-left text-2xl">Stats:</h2>
+                        <ul class="pl-8 text-xl sm:text-md text-left list-disc ">
+                            <li>20 years old</li>
+                            <li>Ubud, Indonesia</li>
+                            <li>11 months of WebDev experience</li>
+                            <li>15 countries visited<span class="text-gray-500 opacity-40">〜6%</span></li>
+                            <li>
+                                <h3>Languages:</h3>
+                                <ul class="pl-8 list-disc">
+                                    <li>Russian: native</li>
+                                    <li>English: striving for IELTS 8 <span class="text-gray-500 opacity-40">〜C2</span>
+                                    </li>
+                                    <li>Japanese: striving for JLPT N5 <span class="text-gray-500 opacity-40">〜A2</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <img src="http://chart.apis.google.com/chart?cht=map:fixed=-70,-180,80,180&chs=450x300&chf=bg,s,336699&chco=d0d0d0,cc0000&chd=s:999999999999999&chld=UA|SE|RU|NL|LT|LV|IT|GR|FR|FI|EE|BE|AE|MY|ID"
+                        width="450" height="300" class="border-accent dark:border-dark-accent border-4">
                 </section>
                 <Newsletter apiKey={convertKitKey} formId={formId} client:load />
                 <!-- <div id="three" class="mx-auto sm:right-32 mt-16 sm:absolute"></div> -->
