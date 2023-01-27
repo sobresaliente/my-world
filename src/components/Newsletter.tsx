@@ -1,18 +1,23 @@
 import { useState } from "react";
-import { convertKitFormId, convertKitKey } from '../../env.js'
-const Newsletrer = () => {
+
+interface Props {
+    formId: string;
+    apiKey: string;
+}
+
+const Newsletrer: React.FC<Props> = ({formId, apiKey}) => {
     const [email, setEmail] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const body = JSON.stringify({ email, api_key: convertKitKey});
+        const body = JSON.stringify({ email, api_key: apiKey});
         const headers = new Headers({
             'Content-Type': 'application/json; charset=utf-8',
           });
 
         try {
-        await fetch(`https://api.convertkit.com/v3/forms/${convertKitFormId}/subscribe`, {
+        await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
