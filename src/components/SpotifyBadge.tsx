@@ -61,7 +61,7 @@ const SpotifyBadge: React.FC<Props> = ({ clientId, clientSecret, refreshToken })
     <>
       {currentTrack.song ? (
         <section>
-          <h3 className='text-left mt-8'>Currently listening to:</h3>
+          <h3 className='text-left text-xl mt-8'>Currently listening to:</h3>
           <a href={currentTrack.href}>
             <div className='flex dark:bg-dark-bg-accent bg-bg-accent w-full sm:w-4/12 rounded-xl p-4 mt-4 text-left text-white'>
               <img
