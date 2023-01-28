@@ -1,47 +1,63 @@
 ---
-    import Layout from "../../layouts/Layout.astro"
-    import ProjectCard from '../../components/ProjectCard'
-    import ProjectsBlock from "../../layouts/ProjectsBlock.astro";
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard';
+import ProjectsBlock from '../../layouts/ProjectsBlock.astro';
 ---
 
-<Layout title="projects" active="projects">
-    <main class="pt-24 ">
-        <div class="w-10/12 mx-auto">
-            <ProjectsBlock title="Indie hacking">
-                <ul>
-                    <li>
-                        <ProjectCard title="Visible Light"
-                            description="Inspired by scientist solution for integrating new features and collect statistics about releases."
-                            link="https://visiblelight.io/" image="/visibleLightLogo.png" status="Active" />
-
-                    </li>
-                </ul>
-            </ProjectsBlock>
-            <ProjectsBlock title="Pet projects">
-                <ul>
-                    <li>
-                        <ProjectCard title="This blog"
-                            description="Built with Astro personal blog with my weekly digests about my development way."
-                            link="https://github.com/sobresaliente/my-world" image="/favicon.svg" rmm=0
-                            status="Active" />
-                    </li>
-                    <li>
-                        <ProjectCard title="Igasgeek's blog"
-                            description="Built with NextJS personal blog with the newsletter synchronized with ConvertKit. It's not so ugly as mine :D"
-                            link="https://igas.me/" image="/about/people/igor.jpg" rmm=0 status="Active" />
-                    </li>
-                </ul>
-            </ProjectsBlock>
-            <ProjectsBlock title="Open source">
-                <ul>
-                    <li>
-                        <ProjectCard title="How Programming Works"
-                            description="The biggest russian language JS community created by ukrainian programmer. I've fixed typos in exercises. Changed outdated READMEs."
-                            link="https://github.com/HowProgrammingWorks"
-                            image="https://avatars.githubusercontent.com/u/17366055?s=200&v=4" rmm=0 status="Active" />
-                    </li>
-                </ul>
-            </ProjectsBlock>
-        </div>
-    </main>
+<Layout title='projects' active='projects'>
+  <main class='pt-24'>
+    <div class='w-10/12 mx-auto'>
+      <ProjectsBlock title='Indie hacking'>
+        <ul>
+          <li>
+            <ProjectCard
+              title='Visible Light'
+              description='Inspired by scientist solution for integrating new features and collecting statistics about releases effortlessly'
+              link='https://visiblelight.io/'
+              image='/visibleLightLogo.png'
+              status='Active'
+            />
+          </li>
+        </ul>
+      </ProjectsBlock>
+      <ProjectsBlock title='Pet projects'>
+        <ul>
+          <li>
+            <ProjectCard
+              title='This blog'
+              description='Built with Astro personal blog with my weekly digests about my development way.'
+              link='https://github.com/sobresaliente/my-world'
+              image='/favicon.svg'
+              rmm='0'
+              status='Active'
+            />
+          </li>
+          <li>
+            <ProjectCard
+              title="Igasgeek's blog"
+              description="Built with NextJS personal blog with the newsletter synchronized with ConvertKit. It's not so ugly as mine :D"
+              link='https://igas.me/'
+              image='/about/people/igor.jpg'
+              rmm='0'
+              status='Active'
+            />
+          </li>
+        </ul>
+      </ProjectsBlock>
+      <ProjectsBlock title='Open source'>
+        <ul>
+          <li>
+            <ProjectCard
+              title='How Programming Works'
+              description="The biggest russian language JS community created by ukrainian programmer. I've fixed typos in exercises. Changed outdated READMEs."
+              link='https://github.com/HowProgrammingWorks'
+              image='https://avatars.githubusercontent.com/u/17366055?s=200&v=4'
+              rmm='0'
+              status='Active'
+            />
+          </li>
+        </ul>
+      </ProjectsBlock>
+    </div>
+  </main>
 </Layout>

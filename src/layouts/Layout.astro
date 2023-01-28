@@ -1,57 +1,61 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header"
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header';
 export interface Props {
-	title: string;
-    active?: string;
+  title: string;
+  active?: string;
 }
 
-const { title, active } = Astro.props
+const { title, active } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-bg-primary text-zinc-900 dark:bg-dark-bg-primary dark:text-dark-text-primary ">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-       
-        <script is:inline>    
-        const theme = (() => {
-            if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-            return localStorage.getItem('theme');
+<html
+  lang='en'
+  class='bg-bg-primary text-zinc-900 dark:bg-dark-bg-primary dark:text-dark-text-primary'
+>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
         }
 
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
         }
-            return 'light';
-        })();
-        if (theme === 'light') {
-            document.documentElement.classList.remove('dark');
-        } else {
-            document.documentElement.classList.add('dark');
-        }
-       
-	    </script>
-    </head>
-	<body class="bg-bg-primary dark:bg-dark-bg-primary text-text-primary  dark:text-dark-primary break-words transition-colors duration-500">
-    <Header active={active} client:load/>
+        return 'light';
+      })();
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body
+    class='bg-bg-primary dark:bg-dark-bg-primary text-text-primary dark:text-dark-primary break-words transition-colors duration-500'
+  >
+    <Header active={active} client:load />
     <slot />
 
     <Footer />
-	</body>
+  </body>
 </html>
 <style is:global>
-    @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap');
-    body {
-        font-family: 'Rubik', -apple-system, sans-serif;
-        font-weight: 400;
-        text-rendering: optimizeLegibility;
-        overflow-wrap: break-word;
-        min-height: 100vh;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap');
+  body {
+    font-family: 'Rubik', -apple-system, sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    min-height: 100vh;
+  }
 </style>
