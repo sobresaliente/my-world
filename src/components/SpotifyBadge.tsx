@@ -77,7 +77,7 @@ const SpotifyBadge: React.FC<Props> = ({ clientId, clientSecret, refreshToken })
           </a>
         </section>
       ) : (
-        <div>{'OOOPS I am not listening anythin'}</div>
+        <div></div>
       )}
     </>
   );

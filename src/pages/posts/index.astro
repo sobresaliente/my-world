@@ -1,19 +1,18 @@
 ---
-    import DigestPost from "../../components/DigestPost.astro";
-    import AboutBlock from "../../layouts/AboutBlock.astro";
-    import Layout from "../../layouts/Layout.astro"
-
-
+import DigestPost from '../../components/DigestPost.astro';
+import AboutBlock from '../../layouts/AboutBlock.astro';
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="posts" active="posts">
-    <main class="pt-24">
-        <div class="flex-col flex">
-            <AboutBlock title="January 2023">
-                <DigestPost title="Third post" link="post-3" date="15.01.23 - 21.01.23" />
-                <DigestPost title="Second post" link="post-2" date="08.01.23 - 14.01.23" />
-                <DigestPost title="First post" link="post-1" date="01.01.23 - 07.01.23" />
-            </AboutBlock>
-        </div>
-    </main>
+<Layout title='posts' active='posts'>
+  <main class='pt-24'>
+    <div class='flex-col flex'>
+      <AboutBlock title='January 2023'>
+        <DigestPost title='Fourth post' link='post-4' date='28.01.23 - 04.02.23' />
+        <DigestPost title='Third post' link='post-3' date='15.01.23 - 21.01.23' />
+        <DigestPost title='Second post' link='post-2' date='08.01.23 - 14.01.23' />
+        <DigestPost title='First post' link='post-1' date='01.01.23 - 07.01.23' />
+      </AboutBlock>
+    </div>
+  </main>
 </Layout>
