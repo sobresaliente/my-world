@@ -1,18 +1,18 @@
 ---
+interface Props {
+  title: string;
+  link: string;
+  date: string;
+}
 
-    interface Props {
-        title: string;
-        link: string;
-        date: string;
-    }
-
-    const { title, link, date } = Astro.props;
+const { title, link, date } = Astro.props;
 ---
 
 <div
-    class="w-1/2 mx-auto bg-bg-secondary dark:bg-dark-bg-secondary text-zinc-900 dark:text-slate-50  mb-8 h-24 p-4 rounded-md">
-    <a href={'posts/' + link} class="text-center text-xl">
-        <h2>{title}</h2>
-    </a>
-    <span class="text-center text-sm text-zinc-400 block mt-4">{date}</span>
+  class='w-1/2 mx-auto bg-bg-secondary dark:bg-dark-bg-secondary text-zinc-900 dark:text-slate-50 mb-8 h-24 p-4 rounded-md'
+>
+  <a href={'posts/' + link} class='text-center text-xl'>
+    <h2>{title}</h2>
+  </a>
+  <span class='text-center text-sm text-zinc-400 block mt-4'>{date}</span>
 </div>

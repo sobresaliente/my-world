@@ -16,6 +16,7 @@ const Newsletrer: React.FC<Props> = ({formId, apiKey}) => {
             'Content-Type': 'application/json; charset=utf-8',
           });
 
+
         try {
         await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
             method: 'POST',

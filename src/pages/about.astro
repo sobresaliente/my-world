@@ -1,225 +1,264 @@
 ---
-    import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 
+import UnderDevelopment from '../components/UnderDevelopment.astro';
+import AboutBlock from '../layouts/AboutBlock.astro';
+import AboutGrid from '../layouts/AboutGrid.astro';
+import AboutItem from '../components/AboutItem.astro';
+import JobBlock from '../layouts/JobBlock.astro';
+import Newsletter from '../components/Newsletter.tsx';
+import SpotifyBadge from '../components/SpotifyBadge.tsx';
+import { Icon } from 'astro-icon';
+import VoxelDaniel from '../components/VoxelDaniel';
+import querystring from 'querystring';
+import { log } from 'console';
 
-    import UnderDevelopment from '../components/UnderDevelopment.astro';
-    import AboutBlock from '../layouts/AboutBlock.astro';
-    import AboutGrid from '../layouts/AboutGrid.astro';
-    import AboutItem from '../components/AboutItem.astro';
-    import JobBlock from '../layouts/JobBlock.astro';
-    import Newsletter from '../components/Newsletter.tsx'
+const pageTitle = 'About me';
 
-    import { Icon } from 'astro-icon'
-    import VoxelDaniel from '../components/VoxelDaniel';
-    const pageTitle = "About me";
-
-    const convertKitKey = import.meta.env.CONVERT_KIT_KEY;
-    const formId = import.meta.env.CONVERT_KIT_FORM_ID;
-
-    const getCurrentTrack = () => {
-        fetch('https://api.spotify.com/v1/me/player/currently-playing', { body: { api_key: import.meta.env.SPOTIFY_KEY } })
-    }
-
+const convertKitKey = import.meta.env.CONVERT_KIT_KEY;
+const formId = import.meta.env.CONVERT_KIT_FORM_ID;
+const spotifyRefreshToken = import.meta.env.SPOTIFY_REFRESH_TOKEN;
+const spotifyClientId = import.meta.env.SPOTIFY_CLIENT_ID;
+const spotifyClientSecret = import.meta.env.SPOTIFY_CLIENT_SECRET;
 ---
 
 <script>
-    // import * as THREE from 'three'
+  // import * as THREE from 'three'
 
-    // const scene = new THREE.Scene();
-    // const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-    // const renderer = new THREE.WebGLRenderer();
+  // const scene = new THREE.Scene();
+  // const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+  // const renderer = new THREE.WebGLRenderer();
 
-    // document.getElementById('three').appendChild(renderer.domElement);
-    // const geometry = new THREE.BoxGeometry(2, 2, 2);
-    // const material = new THREE.MeshBasicMaterial({ color: new THREE.Color("rgb(249, 115, 22)") });
-    // const cube = new THREE.Mesh(geometry, material);
-    // scene.add(cube);
+  // document.getElementById('three').appendChild(renderer.domElement);
+  // const geometry = new THREE.BoxGeometry(2, 2, 2);
+  // const material = new THREE.MeshBasicMaterial({ color: new THREE.Color("rgb(249, 115, 22)") });
+  // const cube = new THREE.Mesh(geometry, material);
+  // scene.add(cube);
 
-    // camera.position.z = 5;
+  // camera.position.z = 5;
 
-    // function animate() {
-    //     requestAnimationFrame(animate);
-    //     renderer.render(scene, camera);
-    //     cube.rotation.x += 0.01;
-    //     cube.rotation.y += 0.01;
-    // }
-    // animate();
+  // function animate() {
+  //     requestAnimationFrame(animate);
+  //     renderer.render(scene, camera);
+  //     cube.rotation.x += 0.01;
+  //     cube.rotation.y += 0.01;
+  // }
+  // animate();
 </script>
-<Layout title={pageTitle} active="about">
+<Layout title={pageTitle} active='about'>
+  <main class='pt-24'>
+    <AboutBlock title='Main Information'>
+      <div class='flex w-10/12 mx-auto flex-col sm:flex-row'>
+        <div class='text-center sm:text-left'>
+          <p class='w-11/12 font-rubik text-lg'>
+            Hi there! My name is Daniil Toint. I'm a middle fullstack developer interested in JS
+            stack, indie hacking and FOSS. In my free time I'm building my side projects, you can
+            find them on the <a href='../projects' class='dark:text-dark-accent text-accent'
+              >projects page</a
+            >. My current goal is to learn T3 stack inspired by Theo Browne and start building indie
+            hacking projects with it. Also I want to learn WebGL/Three.js. Someday I will learn
+            Rust, Go and C# for indie game development. But not today. Also I'm making music, you
+            can check it out <a
+              href=' https://soundcloud.com/xnxlf'
+              class='dark:text-dark-accent text-accent'>here</a
+            >.
+          </p>
+          <SpotifyBadge
+            client:load
+            refreshToken={spotifyRefreshToken}
+            clientId={spotifyClientId}
+            clientSecret={spotifyClientSecret}
+          />
 
-    <main class="pt-24">
-        <AboutBlock title="Main Information">
-            <div class="flex w-10/12 mx-auto flex-col sm:flex-row">
-                <div class="text-center sm:text-left">
-                    <p class="w-11/12 font-rubik text-lg">Hi there! My name is Daniil Toint.
-                        I'm a middle fullstack developer interested in JS stack, indie hacking and FOSS. In my free time
-                        I'm building my side projects,
-                        you can find them on the <a href="../projects"
-                            class="dark:text-dark-accent text-accent">projects
-                            page</a>. My
-                        current goal is to learn T3 stack inspired by Theo Browne and start building indie hacking
-                        projects with it. Also I want to learn WebGL/Three.js.
-                        Someday I will learn Rust, Go and C# for indie game development. But not today. Also I'm making
-                        music, you can check it out <a href=" https://soundcloud.com/xnxlf"
-                            class="dark:text-dark-accent text-accent">here</a>.</p>
-                    <div class="flex mt-6  w-full sm:w-4/12 justify-between">
-                        <a href="https://github.com/sobresaliente"
-                            class="dark:bg-dark-bg-accent  bg-bg-accent text-white rounded-md p-2 flex items-center">
-                            <Icon name="bi:github" className="w-4 h-4 mr-2" />
-                            Github
-                        </a>
-                        <a href="https://twitter.com/tointdaniil"
-                            class="dark:bg-dark-bg-accent bg-bg-accent text-white rounded-md p-2 flex items-center ">
-                            <Icon name="bi:twitter" className="w-4 h-4 mr-2" />
-                            Twitter
-                        </a>
-                        <a href="https://www.linkedin.com/in/daniin-toint/"
-                            class=" dark:bg-dark-bg-accent bg-bg-accent text-white rounded-md p-2 flex items-center">
-                            <Icon name="bi:linkedin" className="w-4 h-4 mr-2" />
-                            LinkedIn
-                        </a>
-                    </div>
+          <div class='flex mt-6 w-full sm:w-4/12 justify-between'>
+            <a
+              href='https://github.com/sobresaliente'
+              class='dark:bg-dark-bg-accent bg-bg-accent text-white rounded-md p-2 flex items-center'
+            >
+              <Icon name='bi:github' className='w-4 h-4 mr-2' />
+              Github
+            </a>
+            <a
+              href='https://twitter.com/tointdaniil'
+              class='dark:bg-dark-bg-accent bg-bg-accent text-white rounded-md p-2 flex items-center'
+            >
+              <Icon name='bi:twitter' className='w-4 h-4 mr-2' />
+              Twitter
+            </a>
+            <a
+              href='https://www.linkedin.com/in/daniin-toint/'
+              class='dark:bg-dark-bg-accent bg-bg-accent text-white rounded-md p-2 flex items-center'
+            >
+              <Icon name='bi:linkedin' className='w-4 h-4 mr-2' />
+              LinkedIn
+            </a>
+          </div>
+        </div>
 
-                </div>
+        <img
+          src='/about/people/ya.jpg'
+          alt='mine photo'
+          class='h-96 dark:border-dark-accent border-accent border-2 order-first sm:order-last mb-4 sm:mb-0'
+        />
+      </div>
+    </AboutBlock>
 
-
-
-                <img src="/about/people/ya.jpg" alt="mine photo"
-                    class="h-96 dark:border-dark-accent border-accent border-2 order-first sm:order-last mb-4 sm:mb-0">
-            </div>
-        </AboutBlock>
-
-        <AboutBlock title="Stats">
-            <div class="flex w-10/12 mx-auto flex-col justify-between">
-                <section class="sm:flex justify-between">
-
-                    <div>
-                        <h2 class="mt-8 text-left text-2xl">Stats:</h2>
-                        <ul class="pl-8 text-xl sm:text-md text-left list-disc ">
-                            <li>20 years old</li>
-                            <li>Ubud, Indonesia</li>
-                            <li>11 months of WebDev experience</li>
-                            <li>15 countries visited<span class="text-gray-500 opacity-40">〜6%</span></li>
-                            <li>
-                                <h3>Languages:</h3>
-                                <ul class="pl-8 list-disc">
-                                    <li>Russian: native</li>
-                                    <li>English: striving for IELTS 8 <span class="text-gray-500 opacity-40">〜C2</span>
-                                    </li>
-                                    <li>Japanese: striving for JLPT N5 <span class="text-gray-500 opacity-40">〜A2</span>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <img src="http://chart.apis.google.com/chart?cht=map:fixed=-70,-180,80,180&chs=450x300&chf=bg,s,336699&chco=d0d0d0,cc0000&chd=s:999999999999999&chld=UA|SE|RU|NL|LT|LV|IT|GR|FR|FI|EE|BE|AE|MY|ID"
-                        width="450" height="300" class="border-accent dark:border-dark-accent border-4 mt-8 sm:mt-0">
-                </section>
-                <Newsletter apiKey={convertKitKey} formId={formId} client:load />
-                <div></div>
-                <!-- <div id="three" class="mx-auto sm:right-32 mt-16 sm:absolute"></div> -->
-
-
-            </div>
-
-        </AboutBlock>
-
-
-        <AboutBlock title="My  jobs">
-            <JobBlock title="Universal Terminal System" dates="December 2022 - January 2023" duration="2 months"
-                position="Middle FullStack Developer // Teamlead"
-                link="https://www.linkedin.com/company/universal-terminal-system/mycompany/verification/"
-                picture="/about/jobs/uts.jpg">
-                <ul class=" dark:text-dark-accent text-accent w-6/12 justify-between mx-auto hidden sm:flex">
-                    <li>React</li>
-                    <li>Next</li>
-                    <li>Ionic</li>
-                    <li>Nest</li>
-                    <li>MongoDB</li>
-                    <li>Docker-compose</li>
-                    <li>CI/CD</li>
-
+    <AboutBlock title='Stats'>
+      <div class='flex w-10/12 mx-auto flex-col justify-between'>
+        <section class='sm:flex justify-between'>
+          <div>
+            <h2 class='mt-8 text-left text-2xl'>Stats:</h2>
+            <ul class='pl-8 text-xl sm:text-md text-left list-disc'>
+              <li>20 years old</li>
+              <li>Ubud, Indonesia</li>
+              <li>11 months of WebDev experience</li>
+              <li>15 countries visited<span class='text-gray-500 opacity-40'>〜6%</span></li>
+              <li>
+                <h3>Languages:</h3>
+                <ul class='pl-8 list-disc'>
+                  <li>Russian: native</li>
+                  <li>
+                    English: striving for IELTS 8 <span class='text-gray-500 opacity-40'>〜C2</span>
+                  </li>
+                  <li>
+                    Japanese: striving for JLPT N5 <span class='text-gray-500 opacity-40'>〜A2</span
+                    >
+                  </li>
                 </ul>
-                <p
-                    class="w-full  sm:w-10/12 mx-auto text-center sm:text-left font-rubik text-lg mt-4 text-dark-text-primary">
-                    I've
-                    decided to
-                    change my
-                    stack
-                    to
-                    something more
-                    popular and interesting for me(React +
-                    Next.js). So I've landed the middle position at the big product company with small web-dev
-                    department. That's why I quckly became teamlead. I love that job a lot because I have a lot of
-                    technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So I can work
-                    with
-                    technologies and immediately use them for my indie hacking passion. My team is developing a lot
-                    of
-                    MVP's connected to hardware systems via bluetooth. We're using Next.js on the frontend, mongoDB
-                    and
-                    NestJs on the backend, ionic on the mobile and Electron/Nextron for desktop applications.</p>
-            </JobBlock>
+              </li>
+            </ul>
+          </div>
 
-            <JobBlock title="Roonyx" position="Junior Frontend Developer" link="https://www.linkedin.com/company/roonyx"
-                dates="February 2022 - December 2022" duration="10 months" picture="/about/jobs/roonyx.jpg">
-                <ul class="dark:text-dark-accent text-accent w-6/12 justify-between mx-auto hidden sm:flex">
-                    <li>Angular</li>
-                    <li>RxJS</li>
-                    <li>Nest</li>
-                    <li>Postgresql</li>
-                    <li>Docker-compose</li>
-                    <li>CI/CD</li>
+          <img
+            src='http://chart.apis.google.com/chart?cht=map:fixed=-70,-180,80,180&chs=450x300&chf=bg,s,336699&chco=d0d0d0,cc0000&chd=s:999999999999999&chld=UA|SE|RU|NL|LT|LV|IT|GR|FR|FI|EE|BE|AE|MY|ID'
+            width='450'
+            height='300'
+            class='border-accent dark:border-dark-accent border-4 mt-8 sm:mt-0'
+          />
+        </section>
+        <Newsletter apiKey={convertKitKey} formId={formId} client:load />
+        <div></div>
+        <!-- <div id="three" class="mx-auto sm:right-32 mt-16 sm:absolute"></div> -->
+      </div>
+    </AboutBlock>
 
-                </ul>
-                <p class="w-10/12 mx-auto text-center sm:text-left font-rubik text-lg mt-4 text-dark-text-primary">
-                    This is my first web-dev position. I've developed very large CRM system using Angular. On
-                    that position I've played a lot with typescript helper functions and reflect API. For example
-                    I've
-                    written js class with property decorator for aliases.</p>
-            </JobBlock>
+    <AboutBlock title='My  jobs'>
+      <JobBlock
+        title='Universal Terminal System'
+        dates='December 2022 - January 2023'
+        duration='2 months'
+        position='Middle FullStack Developer // Teamlead'
+        link='https://www.linkedin.com/company/universal-terminal-system/mycompany/verification/'
+        picture='/about/jobs/uts.jpg'
+      >
+        <ul class='dark:text-dark-accent text-accent w-6/12 justify-between mx-auto hidden sm:flex'>
+          <li>React</li>
+          <li>Next</li>
+          <li>Ionic</li>
+          <li>Nest</li>
+          <li>MongoDB</li>
+          <li>Docker-compose</li>
+          <li>CI/CD</li>
+        </ul>
+        <p
+          class='w-full sm:w-10/12 mx-auto text-center sm:text-left font-rubik text-lg mt-4 text-dark-text-primary'
+        >
+          I've decided to change my stack to something more popular and interesting for me(React +
+          Next.js). So I've landed the middle position at the big product company with small web-dev
+          department. That's why I quckly became teamlead. I love that job a lot because I have a
+          lot of technologies that I can apply like Electron/Nextron, Next.js, Nest.js and Ionic. So
+          I can work with technologies and immediately use them for my indie hacking passion. My
+          team is developing a lot of MVP's connected to hardware systems via bluetooth. We're using
+          Next.js on the frontend, mongoDB and NestJs on the backend, ionic on the mobile and
+          Electron/Nextron for desktop applications.
+        </p>
+      </JobBlock>
 
-        </AboutBlock>
+      <JobBlock
+        title='Roonyx'
+        position='Junior Frontend Developer'
+        link='https://www.linkedin.com/company/roonyx'
+        dates='February 2022 - December 2022'
+        duration='10 months'
+        picture='/about/jobs/roonyx.jpg'
+      >
+        <ul class='dark:text-dark-accent text-accent w-6/12 justify-between mx-auto hidden sm:flex'>
+          <li>Angular</li>
+          <li>RxJS</li>
+          <li>Nest</li>
+          <li>Postgresql</li>
+          <li>Docker-compose</li>
+          <li>CI/CD</li>
+        </ul>
+        <p
+          class='w-10/12 mx-auto text-center sm:text-left font-rubik text-lg mt-4 text-dark-text-primary'
+        >
+          This is my first web-dev position. I've developed very large CRM system using Angular. On
+          that position I've played a lot with typescript helper functions and reflect API. For
+          example I've written js class with property decorator for aliases.
+        </p>
+      </JobBlock>
+    </AboutBlock>
 
-        <AboutBlock title="Persons that inspire me">
-            <AboutGrid>
-                <AboutItem name="Igor Kapkov" link="https://igas.dev/"
-                    description="The best elder brother ever. Proud of you bro! Love ya"
-                    picture="/about/people/igor.jpg" />
+    <AboutBlock title='Persons that inspire me'>
+      <AboutGrid>
+        <AboutItem
+          name='Igor Kapkov'
+          link='https://igas.dev/'
+          description='The best elder brother ever. Proud of you bro! Love ya'
+          picture='/about/people/igor.jpg'
+        />
 
-                <AboutItem name="Theo Browne" link="https://twitter.com/t3dotgg"
-                    description="Love his vibes. I guess if we will have more people like him in the industry web dev will become better place :D"
-                    picture="/about/people/theo.jpg" />
-                <AboutItem name="Bo Burnham" link="https://www.youtube.com/watch?v=rYy0o-J0x20&ab_channel=boburnham"
-                    description="I love the way he strives for excellence. No matter depressed you are or tired asf. You must do your job. That's all that matters."
-                    picture="/about/people/burnham.jpg" />
-            </AboutGrid>
-        </AboutBlock>
+        <AboutItem
+          name='Theo Browne'
+          link='https://twitter.com/t3dotgg'
+          description='Love his vibes. I guess if we will have more people like him in the industry web dev will become better place :D'
+          picture='/about/people/theo.jpg'
+        />
+        <AboutItem
+          name='Bo Burnham'
+          link='https://www.youtube.com/watch?v=rYy0o-J0x20&ab_channel=boburnham'
+          description="I love the way he strives for excellence. No matter depressed you are or tired asf. You must do your job. That's all that matters."
+          picture='/about/people/burnham.jpg'
+        />
+      </AboutGrid>
+    </AboutBlock>
 
-        <AboutBlock title="Devices that I use">
-            <AboutGrid>
-                <AboutItem name="Macbook Pro 2016 15inch" description=""
-                    link="https://www.amazon.com/Apple-MacBook-2-6GHz-MLH32LL-Renewed/dp/B09M1ZNPMK/ref=sr_1_5?keywords=macbook+pro+2016&qid=1673086587&sr=8-5"
-                    picture="/about/devices/macbook.jpg" />
-                <AboutItem name="Audio interface MOTU M4 4x4" description=""
-                    link="https://www.amazon.com/MOTU-M4-USB-C-Audio-Interface/dp/B08129P2XY/ref=sr_1_2?crid=1GW1302HKPGTH&keywords=motu+m4&qid=1673086766&sprefix=mot%2Caps%2C596&sr=8-2"
-                    picture="/about/devices/motu.jpg" />
-                <AboutItem name="Iphone XS" description=""
-                    link="https://www.amazon.com/Apple-iPhone-64GB-Space-Gray/dp/B07SC58QBW/ref=sr_1_1?crid=1YQRY50STRIGH&keywords=iphone+xs&qid=1673086724&sprefix=iphone+x%2Caps%2C362&sr=8-1"
-                    picture="/about/devices/iphone.jpg" />
-                <AboutItem name="Headphones AKG K701" description=""
-                    link="https://www.amazon.com/AKG-Ultra-Reference-Stereo-Headphone/dp/B000EBBJ6Y/ref=sr_1_14?crid=1ICOVWOKGJDZ6&keywords=akg+headphones&qid=1673086814&sprefix=akg+%2Caps%2C377&sr=8-14"
-                    picture="/about/devices/headphones.jpg" />
-                <AboutItem name="Microphone AKG P220" description=""
-                    link="https://www.amazon.com/AKG-Vocal-Condenser-Microphone-3101H00420/dp/B00M9CUJ6W/ref=sr_1_2?crid=3OLJ2J4DGP6NQ&keywords=akg+p220&qid=1673086875&sprefix=akg+p22%2Caps%2C357&sr=8-2"
-                    picture="/about/devices/micro.jpg" />
-            </AboutGrid>
-        </AboutBlock>
+    <AboutBlock title='Devices that I use'>
+      <AboutGrid>
+        <AboutItem
+          name='Macbook Pro 2016 15inch'
+          description=''
+          link='https://www.amazon.com/Apple-MacBook-2-6GHz-MLH32LL-Renewed/dp/B09M1ZNPMK/ref=sr_1_5?keywords=macbook+pro+2016&qid=1673086587&sr=8-5'
+          picture='/about/devices/macbook.jpg'
+        />
+        <AboutItem
+          name='Audio interface MOTU M4 4x4'
+          description=''
+          link='https://www.amazon.com/MOTU-M4-USB-C-Audio-Interface/dp/B08129P2XY/ref=sr_1_2?crid=1GW1302HKPGTH&keywords=motu+m4&qid=1673086766&sprefix=mot%2Caps%2C596&sr=8-2'
+          picture='/about/devices/motu.jpg'
+        />
+        <AboutItem
+          name='Iphone XS'
+          description=''
+          link='https://www.amazon.com/Apple-iPhone-64GB-Space-Gray/dp/B07SC58QBW/ref=sr_1_1?crid=1YQRY50STRIGH&keywords=iphone+xs&qid=1673086724&sprefix=iphone+x%2Caps%2C362&sr=8-1'
+          picture='/about/devices/iphone.jpg'
+        />
+        <AboutItem
+          name='Headphones AKG K701'
+          description=''
+          link='https://www.amazon.com/AKG-Ultra-Reference-Stereo-Headphone/dp/B000EBBJ6Y/ref=sr_1_14?crid=1ICOVWOKGJDZ6&keywords=akg+headphones&qid=1673086814&sprefix=akg+%2Caps%2C377&sr=8-14'
+          picture='/about/devices/headphones.jpg'
+        />
+        <AboutItem
+          name='Microphone AKG P220'
+          description=''
+          link='https://www.amazon.com/AKG-Vocal-Condenser-Microphone-3101H00420/dp/B00M9CUJ6W/ref=sr_1_2?crid=3OLJ2J4DGP6NQ&keywords=akg+p220&qid=1673086875&sprefix=akg+p22%2Caps%2C357&sr=8-2'
+          picture='/about/devices/micro.jpg'
+        />
+      </AboutGrid>
+    </AboutBlock>
+  </main>
 
-
-    </main>
-
+  <style></style>
 </Layout>
-
-<style>
-</style>
