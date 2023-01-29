@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Buffer } from 'buffer';
 
 interface Props {
@@ -32,7 +32,6 @@ const SpotifyBadge: React.FC<Props> = ({ clientId, clientSecret, refreshToken })
   };
 
   let currentPlayingTrack: any = '';
-
   const getNowPlaying = async () => {
     const { access_token } = await getAccessToken();
     currentPlayingTrack = fetch(NOW_PLAYING_ENDPOINT, {
@@ -55,7 +54,9 @@ const SpotifyBadge: React.FC<Props> = ({ clientId, clientSecret, refreshToken })
     });
   };
 
-  getNowPlaying();
+  useEffect(() => {
+    getNowPlaying();
+  }, []);
 
   return (
     <>
