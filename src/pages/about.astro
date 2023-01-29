@@ -1,17 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import UnderDevelopment from '../components/UnderDevelopment.astro';
 import AboutBlock from '../layouts/AboutBlock.astro';
 import AboutGrid from '../layouts/AboutGrid.astro';
 import AboutItem from '../components/AboutItem.astro';
 import JobBlock from '../layouts/JobBlock.astro';
-import Newsletter from '../components/Newsletter.tsx';
-import SpotifyBadge from '../components/SpotifyBadge.tsx';
+import Newsletter from '../components/Newsletter';
+import SpotifyBadge from '../components/SpotifyBadge';
+import ActivityBadge from '../components/ActivityBadge';
 import { Icon } from 'astro-icon';
 import VoxelDaniel from '../components/VoxelDaniel';
-import querystring from 'querystring';
-import { log } from 'console';
 
 const pageTitle = 'About me';
 
@@ -63,12 +61,15 @@ const spotifyClientSecret = import.meta.env.SPOTIFY_CLIENT_SECRET;
             learn Machine Learning to apply it to the music analysis/music generation, learn
             design(as you can see I'm pretty bad at it) and so on and so on.
           </p>
-          <SpotifyBadge
-            client:load
-            refreshToken={spotifyRefreshToken}
-            clientId={spotifyClientId}
-            clientSecret={spotifyClientSecret}
-          />
+          <div class='flex flex-col sm:flex-row w-full justify-between'>
+            <ActivityBadge client:load />
+            <SpotifyBadge
+              client:load
+              refreshToken={spotifyRefreshToken}
+              clientId={spotifyClientId}
+              clientSecret={spotifyClientSecret}
+            />
+          </div>
 
           <div class='flex mt-6 w-full sm:w-4/12 justify-between'>
             <a
