@@ -1,25 +1,27 @@
 ---
-    interface Props {
-        title: string;
-        position: string;
-        picture: string;
-        link: string;
-        dates: string;
-        duration: string;
-    }
+interface Props {
+  title: string;
+  position: string;
+  picture: string;
+  link: string;
+  dates: string;
+  duration: string;
+}
 
-
-    const { title, position, picture, link, dates, duration } = Astro.props
-
+const { title, position, picture, link, dates, duration } = Astro.props;
 ---
 
 <section
-    class="bg-bg-secondary dark:bg-dark-bg-secondary rounded-xl  dark:text-dark-primary p-8 flex flex-col mb-16 w-10/12 mx-auto">
-    <h2 class="text-2xl text-center mb-4 text-dark-text-primary">{title}</h2>
-    <img src={picture} alt="" class="w-64 h-64 block mx-auto mb-8 border-accent dark:border-dark-accent border-8" />
-    <span class="text-center text-dark-text-primary">{position}</span>
-    <span class="text-center text-dark-text-primary">{dates}</span>
-    <span class="text-center mb-4 text-dark-text-primary">{duration}</span>
-    <slot></slot>
-
+  class='bg-bg-secondary dark:bg-dark-bg-secondary rounded-xl dark:text-dark-primary p-8 flex flex-col mb-16 w-10/12 mx-auto'
+>
+  <h2 class='text-2xl text-center mb-4 text-dark-text-primary'>{title}</h2>
+  <img
+    src={picture}
+    alt=''
+    class='w-64 h-64 block mx-auto mb-8 border-accent dark:border-dark-accent border-8'
+  />
+  <span class='text-center text-dark-text-primary'>{position}</span>
+  <span class='text-center text-dark-text-primary'>{dates}</span>
+  <span class='text-center mb-4 text-dark-text-primary'>{duration}</span>
+  <slot />
 </section>

@@ -1,0 +1,16 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.titlePage}>
+  <main class='pt-32 mx-auto sm:w-1/2 w-10/12'>
+    <a href='../posts'>Back</a>
+    <h1 class='font-rowdies text-2xl text-sky-300'>{frontmatter.title}</h1>
+    <h2 class='font-rowdies text-xl text-sky-300'>{frontmatter.dates}</h2>
+    <p class='mt-4'>
+      <slot />
+    </p>
+  </main>
+</Layout>

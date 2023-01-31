@@ -1,0 +1,13 @@
+---
+import ArticlePage from '../../components/ArticlePage.astro';
+import ArticlesLayout from '../../layouts/ArticlesLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title='articles' active='articles'>
+  <main class='pt-24'>
+    <ArticlesLayout>
+      <ArticlePage href='article-1' />
+    </ArticlesLayout>
+  </main>
+</Layout>
