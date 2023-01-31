@@ -1,0 +1,34 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={'articles/' + href}>
+  <section class='w-10/12 bg-bg-secondary dark:bg-dark-bg-secondary rounded-xl'>
+    <div>
+      <img src='/articles/webpack.png' class='bg-white rounded-t-xl' />
+    </div>
+
+    <div class='p-2'>
+      <span class='w-full text-right block text-sm'>January 1, 2023</span>
+
+      <span class='text-xl mt-2'>Webpack overview</span>
+      <div class='flex mt-2 w-full justify-around'>
+        <span><img src='' alt='' />655 views</span>
+        <span><img src='' alt='' />6 minutes read</span>
+      </div>
+      <p class='mt-2'>
+        Webpack overview. I've decided to make the easiest webpack tutorial. In this tutorial we
+        will find out why do we need bundlers.
+      </p>
+      <div class='flex justify-around mt-2'>
+        <span class='rounded-xl p-2 bg-black text-white text-sm'>bundlers</span>
+        <span class='rounded-xl p-2 bg-black text-white text-sm'>webpack</span>
+        <span class='rounded-xl p-2 bg-black text-white text-sm'>beginner</span>
+      </div>
+    </div>
+  </section>
+</a>

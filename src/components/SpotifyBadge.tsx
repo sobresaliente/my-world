@@ -61,13 +61,13 @@ const SpotifyBadge: React.FC<Props> = ({ clientId, clientSecret, refreshToken })
   return (
     <>
       {currentTrack.song ? (
-        <section>
+        <section className='w-full'>
           <h3 className='text-left text-xl mt-8'>Currently listening to:</h3>
           <a href={currentTrack.href}>
-            <div className='flex dark:bg-dark-bg-accent bg-bg-accent w-full sm:w-4/12 rounded-xl p-4 mt-4 text-left text-white'>
+            <div className='flex dark:bg-dark-bg-accent bg-bg-accent w-full  rounded-xl p-4 mt-4 text-left text-white h-24 sm:w-10/12'>
               <img
                 src={currentTrack.img}
-                className='rounded-full border-2 border-green-500'
+                className='rounded-full border-2 border-green-500 w-16 h-16'
                 alt=''
               />
               <div className='ml-8'>
@@ -78,7 +78,13 @@ const SpotifyBadge: React.FC<Props> = ({ clientId, clientSecret, refreshToken })
           </a>
         </section>
       ) : (
-        <div></div>
+        <section className='w-full'>
+          <h3 className='text-left text-xl mt-8'>Current listening to:</h3>
+
+          <div className='flex relative dark:bg-dark-bg-accent bg-bg-accent w-full rounded-xl mt-4 text-left text-white h-24 justify-center sm:w-10/12'>
+            <div className='text-2xl  h-1/3 my-auto text-center'>Nothing</div>
+          </div>
+        </section>
       )}
     </>
   );
