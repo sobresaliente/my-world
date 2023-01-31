@@ -73,41 +73,18 @@ export const ToggleTheme = () => {
     setIsMounted(true);
   }, []);
 
-  return isMounted ? (
-    <div className='inline-flex items-center justify-between p-[2px] rounded-3xl bg-orange-300 dark:bg-zinc-600 w-16 opacity-60 sm:mt-0 absolute right-3 mt-2 top-0 sm:relative max-h-10'>
-      {themes.map((t) => {
-        const checked = t === theme;
-        return (
-          <button
-            key={t}
-            className={
-              (checked ? 'bg-white text-black' : ' text-black') + ' cursor-pointer rounded-3xl p-2'
-            }
-            onClick={toggleTheme}
-            aria-label={'turn on ' + t + ' theme button'}
-          >
-            {t === 'light' ? (
-              <SunIcon className='h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600' />
-            ) : (
-              <MoonIcon className='hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500' />
-            )}
-          </button>
-        );
-      })}
-    </div>
-  ) : (
-    <div className='inline-flex items-center p-[1px] rounded-3xl bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16 opacity-0 sm:mt-0 mt-2 top-0 max-h-10'>
+  return (
+    <div className='rounded-xl border-2 border-black dark:bg-zinc-600 sm:mt-0 absolute right-3 mt-2 top-0 sm:relative h-10 flex w-10 justify-center align-middle'>
       <button
-        className='bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16 cursor-pointer rounded-3xl p-2 opacity-0'
-        aria-label='turn on white theme button'
+        className={'cursor-pointer '}
+        onClick={toggleTheme}
+        aria-label={'turn on ' + theme + ' theme button'}
       >
-        <SunIcon className='h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600' />
-      </button>
-      <button
-        className='bg-orange-300 text-orange-300 dark:bg-zinc-600  dark:text-zinc-600 w-16 cursor-pointer rounded-3xl p-2 opacity-0'
-        aria-label='turn on dark theme button'
-      >
-        <MoonIcon className='hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500' />
+        {theme === 'light' ? (
+          <SunIcon className='h-6 w-6 fill-zinc-100 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600' />
+        ) : (
+          <MoonIcon className='hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500' />
+        )}
       </button>
     </div>
   );
