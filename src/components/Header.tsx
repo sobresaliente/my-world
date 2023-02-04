@@ -45,9 +45,9 @@ const Header: React.FC<Props> = ({ active }) => {
 
           <li>
             <a
-              href='/posts'
+              href='/digests'
               className={
-                (active === 'posts' ? 'dark:text-dark-secondary  text-secondary ' : '') +
+                (active === 'digests' ? 'dark:text-dark-secondary  text-secondary ' : '') +
                 'hover:underline dark:decoration-dark-secondary decoration-secondary underline-offset-4'
               }
             >

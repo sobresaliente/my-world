@@ -72,33 +72,40 @@ declare module 'astro:content' {
 },
 },
 "digests": {
-"post-1.mdx": {
-  id: "post-1.mdx",
+"2023/february/post-1.mdx": {
+  id: "2023/february/post-1.mdx",
+  slug: "post-5",
+  body: string,
+  collection: "digests",
+  data: InferEntrySchema<"digests">
+},
+"2023/january/post-1.mdx": {
+  id: "2023/january/post-1.mdx",
   slug: "post-1",
   body: string,
   collection: "digests",
-  data: any
+  data: InferEntrySchema<"digests">
 },
-"post-2.mdx": {
-  id: "post-2.mdx",
+"2023/january/post-2.mdx": {
+  id: "2023/january/post-2.mdx",
   slug: "post-2",
   body: string,
   collection: "digests",
-  data: any
+  data: InferEntrySchema<"digests">
 },
-"post-3.mdx": {
-  id: "post-3.mdx",
+"2023/january/post-3.mdx": {
+  id: "2023/january/post-3.mdx",
   slug: "post-3",
   body: string,
   collection: "digests",
-  data: any
+  data: InferEntrySchema<"digests">
 },
-"post-4.mdx": {
-  id: "post-4.mdx",
+"2023/january/post-4.mdx": {
+  id: "2023/january/post-4.mdx",
   slug: "post-4",
   body: string,
   collection: "digests",
-  data: any
+  data: InferEntrySchema<"digests">
 },
 },
 

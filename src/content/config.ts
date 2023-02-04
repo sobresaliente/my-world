@@ -6,10 +6,19 @@ const articleCollection = defineCollection({
     title: z.string(),
     menu: z.array(z.object({ title: z.string(), name: z.string() }))
   })
-  /* ... */
+});
+
+const digestCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    titlePage: z.string(),
+    dates: z.string(),
+    month: z.string()
+  })
 });
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
-  articles: articleCollection
+  articles: articleCollection,
+  digests: digestCollection
 };
