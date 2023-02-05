@@ -1,0 +1,14 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const { slug } = Astro.params;
+
+const entry = await getEntryBySlug('articles', slug);
+
+const { Content } = await entry.render();
+---
+
+<ArticleLayout article={entry?.data}>
+  <Content />
+</ArticleLayout>

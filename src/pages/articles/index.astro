@@ -1,11 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
+import ArticlePage from '../../components/ArticlePage.astro';
+import ArticlesLayout from '../../layouts/ArticlesLayout.astro';
 import Layout from '../../layouts/Layout.astro';
-const allArticles = await getCollection('articles');
+const allArticles: CollectionEntry<'articles'>[] = await getCollection('articles');
 ---
 
 <Layout title='articles' active='articles'>
   <main class='pt-24'>
-    {allArticles.map((article) => <div>{article.data.title}</div>)}
+    <ArticlesLayout>
+      {allArticles.map((article) => <ArticlePage article={article} />)}
+    </ArticlesLayout>
   </main>
 </Layout>

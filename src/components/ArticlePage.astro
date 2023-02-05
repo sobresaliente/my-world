@@ -1,12 +1,15 @@
 ---
 interface Props {
-  href: string;
+  article: Article;
 }
 
-const { href } = Astro.props;
+interface Article {
+  slug: string;
+}
+const { article } = Astro.props;
 ---
 
-<a href={'articles/' + href}>
+<a href={'articles/' + article.slug}>
   <section class='w-10/12 bg-bg-secondary dark:bg-dark-bg-secondary rounded-xl'>
     <div>
       <img src='/articles/webpack.png' class='bg-white rounded-t-xl' />
