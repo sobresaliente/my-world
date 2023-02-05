@@ -81,7 +81,7 @@ declare module 'astro:content' {
 },
 "2023/january/post-1.mdx": {
   id: "2023/january/post-1.mdx",
-  slug: "post-1",
+  slug: "january/post-1",
   body: string,
   collection: "digests",
   data: InferEntrySchema<"digests">
