@@ -6,9 +6,14 @@ interface Props {
   article: Article;
 }
 
+interface MenuItem {
+  link: string;
+  title: string;
+}
+
 interface Article {
   titlePage: string;
-  menu: any[];
+  menu: MenuItem[];
   title: string;
   date: string;
 }
@@ -19,7 +24,6 @@ const { article } = Astro.props;
   <div class='flex pt-32'>
     <SideBarArticle menuItems={article.menu} />
     <main class='mx-auto sm:w-1/2 w-10/12'>
-      <a href='../articles'>Back</a>
       <h1 class='font-rowdies text-2xl text-sky-300'>{article.title}</h1>
       <h2 class='font-rowdies text-xl text-sky-300'>{article.date}</h2>
       <p class='mt-4'>

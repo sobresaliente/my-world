@@ -1,11 +1,28 @@
 ---
-export interface Props {
-  menuItems: any[];
+interface MenuItem {
+  link: string;
+  title: string;
+}
+
+interface Props {
+  menuItems: MenuItem[];
 }
 
 const { menuItems } = Astro.props;
 ---
 
-<aside>
-  <ul>{menuItems.map((item) => <li>{item.title}</li>)}</ul>
+<aside class='fixed top-32 left-24 text-xl'>
+  <a href='../articles' class='text-sm'>Back</a>
+
+  <ul class='mt-2 ml-4'>
+    {
+      menuItems.map((item) => (
+        <li>
+          <a href={item.link} class='hover:text-accent'>
+            {item.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </aside>
