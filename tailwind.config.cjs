@@ -10,10 +10,11 @@ module.exports = {
                 rubik: ['Rubik', 'sans-serif']
             },
             colors: {
+                'header': '#3c51a199',
                 'dark-primary': '#f8fafc',
-                'dark-secondary': '#0ea5e9',
+                'dark-secondary': '#0059A2',
                 'dark-accent': '#467ae7',
-                'dark-bg-primary':'#111827',
+                'dark-bg-primary':'#0d1117',
                 'dark-bg-secondary': '#1e293b',
                 'dark-bg-accent': '#334155',
                 'dark-text-primary': '#f8fafc',
