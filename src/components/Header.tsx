@@ -45,17 +45,6 @@ const Header: React.FC<Props> = ({ active }) => {
 
           <li>
             <a
-              href='/digests'
-              className={
-                (active === 'digests' ? 'dark:text-dark-secondary  text-secondary ' : '') +
-                'hover:underline dark:decoration-dark-secondary decoration-secondary underline-offset-4'
-              }
-            >
-              Weekly digest
-            </a>
-          </li>
-          <li>
-            <a
               href='/about'
               className={
                 (active === 'about' ? 'dark:text-dark-secondary  text-secondary ' : '') +
